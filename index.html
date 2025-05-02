@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous"/>
+  <link rel="icon" href="android-chrome-512x512.png" />
+
+  <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+  /* Popup Styles */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  display: flex;
+}
+
+.popup-content {
+  background: linear-gradient(to right, #1f1c2c, #8da9ab);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  color: white;
+  position: relative;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  color: #080808;
+  cursor: pointer;
+}
+
+.popup-content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.popup-content input,
+.popup-content textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.popup-content button {
+  padding: 12px 30px;
+  background-color: #faf9f6;
+  color: black;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.popup-content button:hover {
+  background-color: #f7f6f4;
+}
+
+</style>
+
+</head>
+
+<body>
+
+  <!-- Top Navbar -->
+<div class="top-navbar">
+  <div class="container-top">
+    <div class="top-left">
+      <span><i class="fas fa-envelope"></i> info@linkcode.in</span>
+      </div>
+    <div class="social-icons top-right">
+    <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+    <a href="https//twitter.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
+    <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+  </div>
+</div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+   <div class="logo">
+      <i class="fa-solid fa-user-graduate fa-2x"></i>
+    </div>
+     <!-- Hamburger Toggle Button -->
+  <div class="menu-toggle" id="menu-toggle">
+    <i class="fas fa-bars"></i>
+  </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="courses.html" id="courses-toggle">Courses <i class="fa-solid fa-angle-down"></i></a>
+        <div class="dropdown-content" id="courses-dropdown">
+          <div class="dropdown-column">
+            <ul>
+              <li><a href="java.html">Java Development</a></li>
+              <li><a href="python.html">Python Programming</a></li>
+              <li><a href="index.html?course=javaScript">JavaScript Mastery</a></li>
+              <li><a href="index.html?course=react">React Development</a></li>
+              <li><a href="index.html?course=cybersecurity">Cyber Security</a></li>
+              <li><a href="index.html?course=aws">AWS Cloud</a></li>
+              <li><a href="index.html?course=devops">DevOps Engineering</a></li>
+              <li><a href="index.html?course=uiux">UI/UX Design</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="placements.html">Placements</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <div class="enquire-btn">
+    <button class="enquire-now-btn">Enquire Now</button> 
+  </div>
+  </nav>
+
+<!-- Pop-up Enquiry Form -->
+<div id="enquiry-popup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closeEnquiryPopup()">&times;</span>
+    <h2>Enquiry Form</h2>
+    <form id="contactForm" action="https://formsubmit.co/contact@sangnakitsolutions.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+
+      <input type="text" name="name" id="name" placeholder="Your Name" required>
+      <input type="email" name="email" id="email" placeholder="Your Email" required>
+      <input type="text" name="subject" id="subject" placeholder="Subject" required>
+      <textarea name="message" id="desc" rows="6" placeholder="Your Message" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+    <p id="successMsg" style="margin-top: 10px; color: #8ff58a; font-weight: bold;"></p>
+  </div>
+</div>
+
+
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="hero-content" data-aos="fade-up">
+    <h1>Launch Your Career With Us</h1>
+    <p>Get trained by industry experts and placed in top companies</p>
+    <a href="courses.html" class="cta-btn">Explore Courses</a>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section">
+  <div class="stat-card" data-aos="zoom-in">
+    <h2 class="counter" data-target="100000">0</h2>
+    <p>Interview Calls</p>
+  </div>
+  <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
+    <h2 class="counter" data-target="5000">0</h2>
+    <p>Students Trained</p>
+  </div>
+  <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
+    <h2 class="counter" data-target="300">0</h2>
+    <p>Hiring Partners</p>
+  </div>
+  <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
+    <h2 class="counter" data-target="150">0</h2>
+    <p>Top Recruiters</p>
+  </div>
+</section>
+
+<!-- Hero Section -->
+<section class="second-hero">
+  <div class="left">
+    <div class="experience-box">
+      <h2>15+<br><span>Years of Experiences</span></h2>
+    </div>
+    <img src="group.jpg" alt="Group Image" class="group-img"/>
+  </div>
+
+  <div class="center">
+    <img src="confidence.jpg" alt="Professional Lady" class="main-img"/>
+  </div>
+
+<div class="right">
+  <p class="intro-text">Get To Know About Us</p>
+  <h1>Pune’s Best Professional <br>
+     <span class="highlight-blue">IT Training Institute</span></h1>
+  <p class="description">
+    As Pune’s best professional IT training institute, we are committed to providing top-tier education and career support for aspiring IT professionals.
+  </p>
+  <div class="features">
+    <p><img src="telecaller.icon.png" alt="telecaller">100% Placement Assistance</p>
+    <p><img src="document.png" alt="doc"> Industry-Oriented Hands-On Training</p>
+    <p><img src="graduation.png" alt="graduation"> Work on Live Projects</p>
+    <p><img src="video.png" alt="video">Online Live Training with Recorded Sessions</p>
+  </div><br>
+  <a href="about.html" class="btn-primary">Discover More</a>
+</div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="why-choose-us">
+  <div class="container">
+    <h2> Why to Choose IT Training Institute Pune, India</h2>
+    <div class="features-grid">
+      <div class="feature-box">
+        <img src="traning-img.jpg" alt="Experienced Trainer" style="height:60px; margin-bottom:15px;">
+        <h3>Experienced and Certified Trainers</h3>
+      </div>
+      
+     <div class="feature-box">
+        <img src="internship-img.jpg" alt="Placement Assistance" style="height:60px; margin-bottom:15px;">
+        <h3>Internship Opportunities with real clients</h3>
+    </div>
+
+      <div class="feature-box">
+        <img src="management-img.jpg" alt="Placement Support" style="height:60px; margin-bottom:15px;">
+        <h3>Support and Career guidance</h3>
+      </div>
+      <div class="feature-box">
+        <img src="task-management (1).jpg" alt="Certification" style="height:60px; margin-bottom:15px;">
+        <h3>Hands-on projects from Day one</h3>
+      </div>
+      <div class="feature-box">
+        <img src="project-plan.jpg" alt="Community Support" style="height:60px; margin-bottom:15px;">
+        <h3>Internship on Live Projects</h3>
+      </div>
+        <div class="feature-box">
+          <img src="learning (2).jpg" alt="Community Support" style="height:60px; margin-bottom:15px;">
+          <h3>Build Your Own Projects</h3>
+        </div>
+
+        <div class="feature-box">
+          <img src="skills-enhancement.jpg" alt="Community Support" style="height:60px; margin-bottom:15px;">
+          <h3>Soft Skill Training</h3>
+        </div>
+
+          <div class="feature-box">
+              <img src="hiring (2).jpg" alt="Community Support" style="height:60px; margin-bottom:15px;">
+              <h3>Get Placed in Top MNCs</h3>
+  </div>
+</section>
+
+<!-- courses -->
+<section class="courses-section">
+  <div class="courses-container">
+    <h2>Transform Your Career: IT Training InstituteUnveils Specialized Courses</h2>
+    <div class="courses-grid">
+      <div class="course-card">
+        <div class="courses-img" style="background-image: url(JAva-dev.png);"></div>
+        <h3>Java Development</h3>
+        <p>Build full-stack Java apps from scratch.</p>
+      </div>
+      <div class="course-card">
+          <div class="courses-img" style="background-image: url(py.png);"></div>
+          <h3>Python Programming</h3>
+        <p>Master Python with real-world projects.</p>
+      </div>
+      <div class="course-card">
+        <div class="courses-img" style="background-image: url(javaScript.png);"></div>
+        <h3>JavaScript Mastery</h3>
+        <p>Become a JavaScript expert with hands-on projects.</p>
+    </div>
+      <div class="course-card">
+        <div class="courses-img" style="background-image: url(react.png);"></div>
+        <h3>React Development</h3>
+        <p>Build dynamic web apps using React.</p>
+      </div>
+      <div class="course-card">
+        <div class="courses-img" style="background-image: url(cybersecurity.png);"></div>
+        <h3>Cyber Security</h3>
+        <p>Learn to protect systems and networks.</p>
+      </div>
+      <div class="course-card">
+        <div class="courses-img" style="background-image: url(aws.png);"></div>
+        <h3>AWS Cloud</h3>
+        <p>Master AWS cloud services and architecture.</p>
+      </div>
+      <div class="course-card">
+        <div class="courses-img" style="background-image: url(devops.png);"></div>
+        <h3>DevOps Engineering</h3>
+    
+        <p>Learn DevOps practices and tools.</p>
+      </div>
+      <div class="course-card">
+        <div class="courses-img" style="background-image: url(UI-UX.png);"></div>
+        <h3>UI/UX Design</h3>
+      
+        <p>Create user-friendly interfaces and experiences.</p>
+      </div>
+      <div class="course-card">
+        <div class="courses-img" style="background-image: url(mobile-dev.png);"></div>
+        <h3>Android Development</h3>
+        <p>This course trains you in Android app development using Java and Kotlin ...</p>
+  </div><br>
+</div>
+</section>
+  
+<!-- Swiper Logo Slider -->
+<!-- Company Logos Slider -->
+<div class="logo-swiper-container">
+  <div class="swiper logoSwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="microsoft.png" alt="Logo 1" /></div>
+      <div class="swiper-slide"><img src="linkd.png" alt="Logo 2" /></div>
+      <div class="swiper-slide"><img src="info.png" alt="Logo 3" /></div>
+      <div class="swiper-slide"><img src="accenture.png" alt="Logo 4" /></div>
+      <div class="swiper-slide"><img src="bny-mellon.png" alt="Logo 5" /></div>
+      <div class="swiper-slide"><img src="cogniz.png" alt="Logo 6" /></div>
+      <div class="swiper-slide"><img src="sap.png" alt="Logo 7" /></div>
+      <div class="swiper-slide"><img src="bajaj.png" alt="Logo 8" /></div>
+      <div class="swiper-slide"><img src="sapient1.png" alt="Logo 9" /></div>
+      <div class="swiper-slide"><img src="barclays.png" alt="Logo 10" /></div>
+      <div class="swiper-slide"><img src="brillio3.png" alt="Logo 11" /></div>
+      <div class="swiper-slide"><img src="avaya1.png" alt="Logo 12" /></div>
+      <div class="swiper-slide"><img src="deloitte.png" alt="Logo 13" /></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col">
+      <div class="logo">
+        <i class="fa-solid fa-user-graduate fa-2x"></i>
+      </div><br>
+      <p>We are a leading training institute offering a wide range of courses to help you excel in your career.
+         Our experienced trainers and comprehensive curriculum ensure that you gain the skills needed to succeed in today's competitive job market.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="placements.html">Placements</a></li>
+        <li><a href="#">Disclaimer Policy</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4> Our Services</h4>
+      <ul>
+        <li><a href="#">Interview Preparation</a></li>
+        <li><a href="#">Resume Building</a></li>
+        <li><a href="#">Internship Support</a></li>
+        <li><a href="#">Mock Interviews</a></li>
+        <li><a href="#">Career Counseling</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>Office No.12, Third Floor Barve Memorial Complex, Jangali Maharaj Road, Opposite Panchali Hotel, Shivaji Nagar, Pune 411005.</p>
+      <p>
+      +91 9604430489 &nbsp;&nbsp;&nbsp; +91 7057336919
+      </p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    </div>
+      
+  <div class="footer-bottom">
+    <p>&copy; 2025 Your Institute Name. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<!-- AOS and Main JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
+
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const icon = document.getElementById("icon");
+      const dropdown = document.getElementById("courses-dropdown");
+
+      dropdown-icon.addEventListener("click", function (e) {
+        e.preventDefault();
+        dropdown.classList.toggle("show");
+      });
+
+      document.addEventListener("click", function (event) {
+        if (!dropdown.contains(event.target) && !dropdown-icon.contains(event.target)) {
+          dropdown.classList.remove("show");
+        }
+      });
+    });
+      
+  // Open Enquiry Popup
+function openEnquiryPopup() {
+  const popup = document.getElementById("enquiry-popup");
+  popup.style.display = "flex";
+}
+
+// Close Enquiry Popup with Fade-Out
+function closeEnquiryPopup() {
+  const popup = document.getElementById("enquiry-popup");
+  popup.classList.add("fade-out");
+
+  setTimeout(() => {
+    popup.style.display = "none";
+    popup.classList.remove("fade-out");
+    document.getElementById("successMsg").textContent = "";
+    document.getElementById("contactForm").reset();
+  }, 400); // Wait for fade-out animation
+}
+
+// Handle form submission with AJAX
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const formData = new FormData(form);
+
+  fetch(form.action, {
+    method: "POST",
+    body: formData,
+    headers: { Accept: "application/json" }
+  })
+    .then(response => {
+      if (response.ok) {
+        document.getElementById("successMsg").textContent = "✅ Your message has been sent successfully!";
+        form.reset();
+
+        // Auto-close after 2.5 seconds
+        setTimeout(() => {
+          closeEnquiryPopup();
+        }, 2500);
+      } else {
+        document.getElementById("successMsg").textContent = "❌ Something went wrong. Please try again.";
+      }
+    })
+    .catch(() => {
+      document.getElementById("successMsg").textContent = "⚠️ Network error. Please try later.";
+    });
+});
+
+// Button click to open modal
+const openBtn = document.querySelector(".enquire-now-btn");
+const popup = document.getElementById("enquiry-popup");
+
+if (openBtn) {
+  openBtn.addEventListener("click", function () {
+    popup.style.display = "flex";
+  });
+}
+
+// Close popup if clicked outside content
+window.onclick = function (e) {
+  if (e.target === popup) {
+    closeEnquiryPopup();
+  }
+};
+
+
+  var swiper = new Swiper(".logoSwiper", {
+    slidesPerView: 4,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 2,
+      },
+      640: {
+        slidesPerView: 3,
+      },
+      1024: {
+        slidesPerView: 4,
+      }
+    }
+  });
+
+  // Animated Counter
+const counters = document.querySelectorAll('.counter');
+
+counters.forEach(counter => {
+  const updateCount = () => {
+    const target = +counter.getAttribute('data-target');
+    const count = +counter.innerText;
+
+    const increment = target / 200;
+
+    if (count < target) {
+      counter.innerText = Math.ceil(count + increment);
+      setTimeout(updateCount, 10);
+    } else {
+      counter.innerText = target;
+    }
+  };
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          updateCount();
+          observer.unobserve(counter);
+        }
+      });
+    },
+    { threshold: 1.0 }
+  );
+
+  observer.observe(counter);
+});
+
+
+</script>
+</body>
+</html>

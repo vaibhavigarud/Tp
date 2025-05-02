@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Placements</title>
+  <link rel="stylesheet" href="style.css"/>
+  <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-xxy..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="icon" href="android-chrome-512x512.png" />
+
+    <head>
+<style>
+    * {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "arial";
+  line-height: 1.6;
+  background: #f9f9f9;
+  color: #333;
+
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.about-hero {
+  background-image: url('student-img.png');
+  background-size: cover;
+  background-position: center;
+  padding: 50px 20px;
+  color: #fff;
+  text-shadow: 1px 1px 3px #000;
+  font-size: 20px;
+}
+
+.placement-section {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #f9fbfc;
+}
+
+.placement-section h2 {
+  font-size: 2rem;
+  color: #000;
+  margin-bottom: 40px;
+}
+
+.placement-section h2 span {
+  color: #00b14f; /* Greenish tone */
+}
+
+.placement-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 54px;
+  align-items: center;
+  justify-items: center;   
+  background-color: #587fa10f;
+  
+}
+
+.logo-box {
+  display: flex;
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  cursor: pointer;
+}
+
+.logo-box:hover {
+  transform: scale(1.05);
+}
+
+.logo-box img {
+  max-width: 100%;
+  max-height: 70px;
+ object-fit: contain;
+ filter: none;
+ transition: transform 0.3s;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  flex-direction: row;
+  background-color: #5f9ca0;
+  border-radius: 10px;
+  padding: 1rem;
+  gap: 2rem;
+  box-shadow: 0 10px 25px rgba(15, 15, 15, 0.2);
+  z-index: 1000;
+  margin-left: 5PX;
+  transition: transform 0.3s;
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+}
+
+
+.dropdown-column h4 {
+  margin-bottom: 0.5rem;
+  color: #ecf1f1;
+}
+
+.dropdown-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.dropdown-column ul li {
+  margin-bottom: 0.5rem;
+}
+
+.dropdown-column ul li a {
+  color: rgb(37, 37, 37);
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: block;
+  transition: color 0.3s;
+}
+
+.dropdown-column ul li a:hover {
+  color: #7f8181;
+}
+
+
+/* Popup Styles */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: linear-gradient(to right, #1f1c2c, #8da9ab);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  color: white;
+  position: relative;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  color: #f5f4f2;
+  cursor: pointer;
+}
+
+.popup-content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.popup-content input,
+.popup-content textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.popup-content button {
+  padding: 12px 30px;
+  background-color: #f7f5f2;
+  color: black;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.popup-content button:hover {
+  background-color: #f8f7f5;
+}
+
+
+.footer {
+  background: #2c3e50;
+  color: #fff;
+  padding: 40px 20px 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 250px;
+  margin-bottom: 20px;
+}
+
+.footer-col h4 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: #00b4d8;
+}
+
+.social-links a {
+  color: #fff;
+  margin-right: 15px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  color: #00b4d8;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #444;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #fff;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #5f9ca0;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 200px;
+    padding: 15px;
+    border-radius: 8px;
+    z-index: 999;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .dropdown-content {
+    position: static;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: none; /* disable hover dropdown on mobile */
+  }
+
+  .dropdown-content,
+  .dropdown-column {
+    flex-direction: column;
+    padding: 0;
+    gap: 0;
+  }
+}
+
+</style>
+</head>
+<body>
+      <!-- Top Navbar -->
+  <div class="top-navbar">
+    <div class="container-top">
+      <div class="top-left">
+        <span><i class="fas fa-envelope"></i> info@linkcode.in</span>
+        </div>
+      <div class="social-icons top-right">
+      <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https//twitter.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
+
+      <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+    </div>
+  </div>
+
+    <nav class="navbar">
+        <div class="logo">
+          <i class="fa-solid fa-user-graduate fa-2x"></i>
+        </div>
+        <!-- Hamburger Toggle Button -->
+  <div class="menu-toggle" id="menu-toggle">
+    <i class="fas fa-bars"></i>
+  </div>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="courses.html" id="courses-toggle">Courses<i class="fas fa-caret-down" id="course-arrow" style="margin-left: 5px; transition: transform 0.3s;"></i></a>
+            <div class="dropdown-content" id="courses-dropdown">
+              <div class="dropdown-column">
+                <ul>
+                  <li><a href="index.html?course=java">Java Development</a></li>
+                  <li><a href="index.html?course=python">Python Programming</a></li>
+                  <li><a href="index.html?course=javaScript">JavaScript Mastery</a></li>
+                  <li><a href="index.html?course=react">React Development</a></li>
+                  <li><a href="index.html?course=cybersecurity">Cyber Security</a></li>
+                  <li><a href="index.html?course=aws">AWS Cloud</a></li>
+                  <li><a href="index.html?course=devops">DevOps Engineering</a></li>
+                  <li><a href="index.html?course=uiux">UI/UX Design</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="placements.html">Placements</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      
+ <!---enquiry btn--->
+ <div class="enquire-btn">
+  <button class="enquire-now-btn">Enquire Now</button> 
+</div>
+</nav>
+
+<!-- Pop-up Enquiry Form--> 
+<div id="enquiry-popup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closeEnquiryPopup()">&times;</span>
+    <h2>Enquiry Form</h2>
+    <form id="contactForm" action="https://formsubmit.co/contact@sangnakitsolutions.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+
+      <input type="text" name="name" id="name" placeholder="Your Name" required>
+      <input type="email" name="email" id="email" placeholder="Your Email" required>
+      <input type="text" name="subject" id="subject" placeholder="Subject" required>
+      <textarea name="message" id="desc" rows="6" placeholder="Your Message" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+    <p id="successMsg" style="margin-top: 10px; color: #8ff58a; font-weight: bold;"></p>
+  </div>
+</div>
+<!-- Hero Section -->
+<section class="about-hero">
+    <div class="container" style="text-align: left;">
+      <h1>PLACEMENTS</h1>
+      <p>Discover our successful placement records and partner companies.</p>
+    </div>
+  </section>
+
+  <!-- Placement Section -->
+<section class="placement-section">
+    <h2>Our Students <span>Placed AT</span></h2>
+    <div class="placement-grid">
+      <div class="logo-box"><img src="microsoft.png" alt="Microsoft"></div>
+      <div class="logo-box"><img src="linkd.png" alt="LinkedIn"></div>
+      <div class="logo-box"><img src="info.png" alt="Infosys"></div>
+      <div class="logo-box"><img src="accenture.png" alt="Accenture"></div>
+      <div class="logo-box"><img src="barclays.png" alt="Barclays"></div>
+      <div class="logo-box"><img src="brillio3.png" alt="Brillio"></div>
+      <div class="logo-box"><img src="sapient1.png" alt="Publicis Sapient"></div>
+      <div class="logo-box"><img src="bny-mellon.png" alt="BNY Mellon"></div>
+      <div class="logo-box"><img src="bajaj.png" alt="Bajaj"></div>
+      <div class="logo-box"><img src="cogniz.png" alt="Cognizant"></div>
+      <div class="logo-box"><img src="sap.png" alt="SAP"></div>
+      <div class="logo-box"><img src="avaya1.png" alt="Avaya"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <div class="logo">
+          <i class="fa-solid fa-user-graduate fa-2x"></i>
+        </div><br>
+        <p>We are a leading training institute offering a wide range of courses to help you excel in your career.
+           Our experienced trainers and comprehensive curriculum ensure that you gain the skills needed to succeed in today's competitive job market.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="placement.http">Placements</a></li>
+          <li><a href="#">Disclaimer Policy</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-col">
+        <h4> Our Services</h4>
+        <ul>
+          <li><a href="#">Interview Preparation</a></li>
+          <li><a href="#">Resume Building</a></li>
+          <li><a href="#">Internship Support</a></li>
+          <li><a href="#">Mock Interviews</a></li>
+          <li><a href="#">Career Counseling</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Office No.12, Third Floor Barve Memorial Complex, Jangali Maharaj Road, Opposite Panchali Hotel, Shivaji Nagar, Pune 411005.</p>
+        <p>
+        +91 9604430489 &nbsp;&nbsp;&nbsp; +91 7057336919
+        </p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-x-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      </div>
+        
+    <div class="footer-bottom">
+      <p>&copy; 2025 Your Institute Name. All Rights Reserved.</p>
+    </div>
+  </footer>
+   <!-- JavaScript -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const icon = document.getElementById(".dropdown-icon");
+      const dropdown = document.getElementById("courses-dropdown");
+
+      dropdown-icon.addEventListener("click", function (e) {
+        e.preventDefault();
+        dropdown.classList.toggle("show");
+      });
+
+      document.addEventListener("click", function (event) {
+        if (!dropdown.contains(event.target) && !dropdown-icon.contains(event.target)) {
+          dropdown.classList.remove("show");
+        }
+      });
+    });
+      
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    const params = new URLSearchParams(window.location.search);
+    const courseFromURL = params.get('course');
+
+    if (courseFromURL) {
+      // Hide all panels first
+      const panels = document.querySelectorAll('.course-panel');
+      panels.forEach(panel => panel.style.display = 'none');
+
+      // Show the selected one
+      const selectedPanel = document.getElementById(courseFromURL);
+      if (selectedPanel) {
+        selectedPanel.style.display = 'block';
+        selectedPanel.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  });
+
+  // Open popup
+  function openEnquiryPopup() {
+    document.getElementById("enquiry-popup").style.display = "flex";
+  }
+
+  // Close popup
+  function closeEnquiryPopup() {
+    document.getElementById("enquiry-popup").style.display = "none";
+    document.getElementById("successMsg").textContent = "";
+    document.getElementById("contactForm").reset();
+  }
+
+  // Handle form submission with AJAX
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: "POST",
+      body: formData,
+      headers: { Accept: "application/json" }
+    })
+      .then(response => {
+        if (response.ok) {
+          document.getElementById("successMsg").textContent = "✅ Your message has been sent successfully!";
+          form.reset();
+        } else {
+          document.getElementById("successMsg").textContent = "❌ Something went wrong. Please try again.";
+        }
+      })
+      .catch(() => {
+        document.getElementById("successMsg").textContent = "⚠️ Network error. Please try later.";
+      });
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+  const openBtn = document.querySelector(".enquire-now-btn");
+  const popup = document.getElementById("enquiry-popup");
+
+  if (openBtn) {
+    openBtn.addEventListener("click", function () {
+      popup.style.display = "flex";
+    });
+  }
+
+  // Close popup on outside click
+  window.onclick = function (e) {
+    if (e.target === popup) {
+      popup.style.display = "none";
+    }
+  };
+});
+
+const toggleBtn = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+
+  toggleBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+  });
+
+  // Handle dropdown on mobile
+  document.querySelectorAll('.dropdown-toggle').forEach(drop => {
+    drop.addEventListener('click', (e) => {
+      e.preventDefault();
+      drop.parentElement.classList.toggle('open');
+    });
+  });
+
+
+</script>
+</body>

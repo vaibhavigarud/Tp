@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Career Services</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-xxy..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="icon" href="android-chrome-512x512.png" />
+
+  <style>
+    body {
+      background: #a6bebe;
+      font-family: 'Segoe UI', sans-serif;
+      color: rgb(3, 3, 3);
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 4rem 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 3rem;
+      color: #080808;
+      font-size: 2.5rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: linear-gradient(to right, #849999);
+      border-radius: 1.5rem;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease-in-out;  
+    }
+
+    .service-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .service-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #0f0f0f;
+    }
+
+    .service-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .service-description {
+      font-size: 0.95rem;
+      color: #f3f3eb;
+    }
+
+/* Popup Styles */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: linear-gradient(to right, #1f1c2c, #8da9ab);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  color: white;
+  position: relative;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  color: #f5f4f2;
+  cursor: pointer;
+}
+
+.popup-content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.popup-content input,
+.popup-content textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.popup-content button {
+  padding: 12px 30px;
+  background-color: #f7f5f2;
+  color: black;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.popup-content button:hover {
+  background-color: #f8f7f5;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  flex-direction: row;
+  background-color: #5f9ca0;
+  border-radius: 10px;
+  padding: 1rem;
+  gap: 2rem;
+  box-shadow: 0 10px 25px rgba(15, 15, 15, 0.2);
+  z-index: 1000;
+  margin-left: 5PX;
+  transition: transform 0.3s;
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+}
+
+
+.dropdown-column h4 {
+  margin-bottom: 0.5rem;
+  color: #ecf1f1;
+}
+
+.dropdown-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.dropdown-column ul li {
+  margin-bottom: 0.5rem;
+}
+
+.dropdown-column ul li a {
+  color: rgb(37, 37, 37);
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: block;
+  transition: color 0.3s;
+}
+
+.dropdown-column ul li a:hover {
+  color: #7f8181;
+}
+
+
+.footer {
+  background: #2c3e50;
+  color: #fff;
+  padding: 40px 20px 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 250px;
+  margin-bottom: 20px;
+}
+
+.footer-col h4 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: #00b4d8;
+}
+
+.social-links a {
+  color: #fff;
+  margin-right: 15px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  color: #00b4d8;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #444;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #fff;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #5f9ca0;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 200px;
+    padding: 15px;
+    border-radius: 8px;
+    z-index: 999;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .dropdown-content {
+    position: static;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: none; /* disable hover dropdown on mobile */
+  }
+
+  .dropdown-content,
+  .dropdown-column {
+    flex-direction: column;
+    padding: 0;
+    gap: 0;
+  }
+}
+  </style>
+</head>
+<body>
+
+<!-- Top Navbar -->
+<div class="top-navbar">
+  <div class="container-top">
+    <div class="top-left">
+      <span><i class="fas fa-envelope"></i> info@linkcode.in</span>
+    </div>
+    <div class="social-icons top-right">
+    <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+    <a href="https//twitter.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
+
+    <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+  </div>
+</div>
+
+  <nav class="navbar">
+    <div class="logo">
+      <i class="fa-solid fa-user-graduate fa-2x"></i>
+    </div>
+    <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="courses.html" id="courses-toggle">Courses<i class="fas fa-caret-down" id="course-arrow" style="margin-left: 5px; transition: transform 0.3s;"></i></a>
+        <div class="dropdown-content" id="courses-dropdown">
+          <div class="dropdown-column">
+            <ul>
+              <li><a href="index.html?course=java">Java Development</a></li>
+              <li><a href="index.html?course=python">Python Programming</a></li>
+              <li><a href="index.html?course=javaScript">JavaScript Mastery</a></li>
+              <li><a href="index.html?course=react">React Development</a></li>
+              <li><a href="index.html?course=cybersecurity">Cyber Security</a></li>
+              <li><a href="index.html?course=aws">AWS Cloud</a></li>
+              <li><a href="index.html?course=devops">DevOps Engineering</a></li>
+              <li><a href="index.html?course=uiux">UI/UX Design</a></li>
+              <li><a href="index.html?course=java">Java</a></li>
+              <li><a href="index.html?course=cybersecurity">Cyber Security</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="placements.html">Placements</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+   <!---enquiry btn--->
+ <div class="enquire-btn">
+  <button class="enquire-now-btn">Enquire Now</button> 
+</div>
+</nav>
+
+<!-- Pop-up Enquiry Form -->
+<div id="enquiry-popup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closeEnquiryPopup()">&times;</span>
+    <h2>Enquiry Form</h2>
+    <form id="contactForm" action="https://formsubmit.co/contact@sangnakitsolutions.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+
+      <input type="text" name="name" id="name" placeholder="Your Name" required>
+      <input type="email" name="email" id="email" placeholder="Your Email" required>
+      <input type="text" name="subject" id="subject" placeholder="Subject" required>
+      <textarea name="message" id="desc" rows="6" placeholder="Your Message" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+    <p id="successMsg" style="margin-top: 10px; color: #8ff58a; font-weight: bold;"></p>
+  </div>
+</div>
+
+  <div class="container">
+    <h1>Career Services</h1>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🎤</div>
+        <div class="service-title">Interview Preparation</div>
+        <p class="service-description">Crack interviews with confidence through mock rounds and personalized coaching.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📄</div>
+        <div class="service-title">Resume Building</div>
+        <p class="service-description">Build professional resumes that highlight your strengths and skills effectively.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">👨‍💻</div>
+        <div class="service-title">Internship Support</div>
+        <p class="service-description">Find relevant internships to gain real-world experience in your field.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🗣</div>
+        <div class="service-title">Mock Interviews</div>
+        <p class="service-description">Practice technical and HR interviews with industry experts.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🧭</div>
+        <div class="service-title">Career Counseling</div>
+        <p class="service-description">Get personalized guidance to plan your career path effectively.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col">
+      <div class="logo">
+        <i class="fa-solid fa-user-graduate fa-2x"></i>
+      </div><br>
+      <p>We are a leading training institute offering a wide range of courses to help you excel in your career.
+         Our experienced trainers and comprehensive curriculum ensure that you gain the skills needed to succeed in today's competitive job market.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="placement.http">Placements</a></li>
+        <li><a href="#">Disclaimer Policy</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4> Our Services</h4>
+      <ul>
+        <li><a href="#">Interview Preparation</a></li>
+        <li><a href="#">Resume Building</a></li>
+        <li><a href="#">Internship Support</a></li>
+        <li><a href="#">Mock Interviews</a></li>
+        <li><a href="#">Career Counseling</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>Office No.12, Third Floor Barve Memorial Complex, Jangali Maharaj Road, Opposite Panchali Hotel, Shivaji Nagar, Pune 411005.</p>
+      <p>
+      +91 9604430489 &nbsp;&nbsp;&nbsp; +91 7057336919
+      </p>
+      <div class="social-links">
+        <a href="https//facebook.com"><i class="fab fa-facebook-f"></i></a>
+        <a href="https//twitter.com"><i class="fab fa-x-twitter"></i></a>
+        <a href="https//instagram.com"><i class="fab fa-instagram"></i></a>
+        <a href="https//linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    </div>
+      
+  <div class="footer-bottom">
+    <p>&copy; 2025 Your Institute Name. All Rights Reserved.</p>
+  </div>
+</footer>
+
+  <script>
+    // Toggle dropdown visibility
+    document.addEventListener("DOMContentLoaded", function () {
+      const icon = document.getElementById("dropdown-icon");
+      const dropdown = document.getElementById("courses-dropdown");
+
+      dropdown-icon.addEventListener("click", function (e) {
+        e.preventDefault();
+        dropdown.classList.toggle("show");
+      });
+
+      document.addEventListener("click", function (event) {
+        if (!dropdown.contains(event.target) && !dropdown-icon.contains(event.target)) {
+          dropdown.classList.remove("show");
+        }
+      });
+    });
+
+    const params = new URLSearchParams(window.location.search);
+    const courseFromURL = params.get('course');
+
+    if (courseFromURL) {
+      // Hide all panels first
+      const panels = document.querySelectorAll('.course-panel');
+      panels.forEach(panel => panel.style.display = 'none');
+
+      // Show the selected one
+      const selectedPanel = document.getElementById(courseFromURL);
+      if (selectedPanel) {
+        selectedPanel.style.display = 'block';
+        selectedPanel.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+  // Open popup
+  function openEnquiryPopup() {
+    document.getElementById("enquiry-popup").style.display = "flex";
+  }
+
+  // Close popup
+  function closeEnquiryPopup() {
+    document.getElementById("enquiry-popup").style.display = "none";
+    document.getElementById("successMsg").textContent = "";
+    document.getElementById("contactForm").reset();
+  }
+
+  // Handle form submission with AJAX
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: "POST",
+      body: formData,
+      headers: { Accept: "application/json" }
+    })
+      .then(response => {
+        if (response.ok) {
+          document.getElementById("successMsg").textContent = "✅ Your message has been sent successfully!";
+          form.reset();
+        } else {
+          document.getElementById("successMsg").textContent = "❌ Something went wrong. Please try again.";
+        }
+      })
+      .catch(() => {
+        document.getElementById("successMsg").textContent = "⚠️ Network error. Please try later.";
+      });
+  });
+
+  const openBtn = document.querySelector(".enquire-now-btn");
+  const popup = document.getElementById("enquiry-popup");
+
+  if (openBtn) {
+    openBtn.addEventListener("click", function () {
+      popup.style.display = "flex";
+    });
+  }
+
+  // Close popup on outside click
+  window.onclick = function (e) {
+    if (e.target === popup) {
+      popup.style.display = "none";
+    }
+  };
+
+
+const toggleBtn = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    toggleBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+
+  </script>
+</body>
+</html>
+
+
