@@ -11,24 +11,36 @@
 
   <style>
     body {
-      background: #a6bebe;
+      background: #efffff85;
       font-family: 'Segoe UI', sans-serif;
       color: rgb(3, 3, 3);
       margin: 0;
       padding: 0;
     }
 
+  .hero-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+
+}
+
+  .about-hero {
+  background-image: url('student-img.png');
+  background-size: cover;
+  background-position: center;
+  padding: 50px 20px;
+  color: #fff;
+  text-shadow: 1px 1px 3px #1b1b1b;
+  font-size: 20px;
+}
+
+
     .container {
       max-width: 1200px;
       margin: auto;
       padding: 4rem 2rem;
-    }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 3rem;
-      color: #080808;
-      font-size: 2.5rem;
     }
 
     .services-grid {
@@ -38,7 +50,7 @@
     }
 
     .service-card {
-      background: linear-gradient(to right, #849999);
+      background: linear-gradient(to right, #7ea0a0);
       border-radius: 1.5rem;
       padding: 2rem;
       text-align: center;
@@ -247,6 +259,60 @@
   border-top: 1px solid #444;
 }
 
+.info-panel-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.info-panel-overlay.active {
+  display: flex;
+}
+
+.info-panel-content {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  padding: 24px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  color: #333;
+  backdrop-filter: blur(15px);
+  text-align: center;
+  position: relative;
+  animation: fadeInUp 0.3s ease;
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Optional animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
 .menu-toggle {
   display: none;
   font-size: 24px;
@@ -331,16 +397,15 @@
         <div class="dropdown-content" id="courses-dropdown">
           <div class="dropdown-column">
             <ul>
-              <li><a href="index.html?course=java">Java Development</a></li>
-              <li><a href="index.html?course=python">Python Programming</a></li>
-              <li><a href="index.html?course=javaScript">JavaScript Mastery</a></li>
-              <li><a href="index.html?course=react">React Development</a></li>
-              <li><a href="index.html?course=cybersecurity">Cyber Security</a></li>
-              <li><a href="index.html?course=aws">AWS Cloud</a></li>
-              <li><a href="index.html?course=devops">DevOps Engineering</a></li>
-              <li><a href="index.html?course=uiux">UI/UX Design</a></li>
-              <li><a href="index.html?course=java">Java</a></li>
-              <li><a href="index.html?course=cybersecurity">Cyber Security</a></li>
+             <li><a href="java.html">Java Development</a></li>
+                <li><a href="python.html">Python Programming</a></li>
+                <li><a href="blockchain.html">blockchain development</a></li>
+                <li><a href="react.html">React Development</a></li>
+                <li><a href="cybersecurity.html">Cyber Security</a></li>
+                <li><a href="aws.html">AWS Cloud</a></li>
+                <li><a href="devops.html">DevOps Engineering</a></li>
+                <li><a href="uiux.html">UI/UX Design</a></li>
+                <li><a href="android.html">Android Development</a></li>
             </ul>
           </div>
         </div>
@@ -352,7 +417,7 @@
     </ul>
    <!---enquiry btn--->
  <div class="enquire-btn">
-  <button class="enquire-now-btn">Enquire Now</button> 
+  <button class="enquire-now-btn" onclick="openEnquiryPopup">Enquire Now</button> 
 </div>
 </nav>
 
@@ -375,41 +440,82 @@
   </div>
 </div>
 
+<!-- Hero Section -->
+<section class="about-hero">
+  <div class="hero-container" style="text-align: left;">
+    <h1>OUR Services</h1>
+    <p>We offer a range of services to help you excel in your career. From soft skills training to job placement assistance, we are here to support you every step of the way.</p>
+  </div>
+</section>
+
+  <!-- Services Section -->
+<section class="services-section">
   <div class="container">
-    <h1>Career Services</h1>
-
     <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon">🎤</div>
-        <div class="service-title">Interview Preparation</div>
-        <p class="service-description">Crack interviews with confidence through mock rounds and personalized coaching.</p>
+      <!-- Service Card 1 -->
+      <div class="service-card glass" onclick="showInfoPanel('Soft Skills Training', 'Enhance your communication, teamwork, and leadership skills.')">
+        <div class="service-icon">🗣️</div>
+        <h3 class="service-title">Soft Skills Training</h3>
+        <p class="service-description">Enhance your communication and teamwork skills.</p>
       </div>
-
-      <div class="service-card">
+      <!-- Service Card 2 -->
+      <div class="service-card glass" onclick="showInfoPanel('Resume Building', 'Create a professional resume that stands out.')">
         <div class="service-icon">📄</div>
-        <div class="service-title">Resume Building</div>
-        <p class="service-description">Build professional resumes that highlight your strengths and skills effectively.</p>
+        <h3 class="service-title">Resume Building</h3>
+        <p class="service-description">Create a professional and impressive resume.</p>
       </div>
-
-      <div class="service-card">
-        <div class="service-icon">👨‍💻</div>
-        <div class="service-title">Internship Support</div>
-        <p class="service-description">Find relevant internships to gain real-world experience in your field.</p>
+      <!-- Service Card 3 -->
+      <div class="service-card glass" onclick="showInfoPanel('Interview Preparation', 'Practice mock interviews and get personalized feedback.')">
+        <div class="service-icon">🎤</div>
+        <h3 class="service-title">Interview Preparation</h3>
+        <p class="service-description">Prepare for interviews with mock sessions and feedback.</p>
       </div>
-
-      <div class="service-card">
-        <div class="service-icon">🗣</div>
-        <div class="service-title">Mock Interviews</div>
-        <p class="service-description">Practice technical and HR interviews with industry experts.</p>
+      <!-- Service Card 4 -->
+      <div class="service-card glass" onclick="showInfoPanel('Internships', 'Gain hands-on experience with real-world projects.')">
+        <div class="service-icon">💼</div>
+        <h3 class="service-title">Internships</h3>
+        <p class="service-description">Gain practical experience in real industry projects.</p>
       </div>
-
-      <div class="service-card">
+      <!-- Service Card 5 -->
+      <div class="service-card glass" onclick="showInfoPanel('Career Counseling', 'Get personalized guidance to plan your career path effectively.')">
         <div class="service-icon">🧭</div>
         <div class="service-title">Career Counseling</div>
         <p class="service-description">Get personalized guidance to plan your career path effectively.</p>
       </div>
+
+      <!-- Service Card 6 -->
+      <div class="service-card glass" onclick="showInfoPanel('Skill Development', 'Enhance your skills with our specialized training programs.')">
+        <div class="service-icon">📚</div>
+        <div class="service-title">Skill Development</div>
+        <p class="service-description">Enhance your skills with our specialized training programs.</p>
+        </div>
+
+        <!-- service-card 7 -->
+        <div class="service-card glass" onclick="showInfoPanel('Job Placement Assistance', 'Receive job placement support to kickstart your career.')">
+        <div class="service-icon">💼</div>
+        <div class="service-title">Job Placement Assistance</div>
+        <p class="service-description">Receive job placement support to kickstart your career.</p>
+        </div>
+
+        <!-- service-card 8 -->
+        <div class="service-card glass" onclick="showInfoPanel('Mock Interviews', 'Participate in mock interviews to build confidence.')">
+        <div class="service-icon">🎤</div>
+        <div class="service-title">Mock Interviews</div>
+        <p class="service-description">Participate in mock interviews to build confidence.</p>
+        </div>
     </div>
   </div>
+</section>
+
+<!-- Info Panel -->
+<div class="info-panel-overlay" id="infoPanel">
+  <div class="info-panel-content">
+    <button class="close-btn" onclick="closeInfoPanel()">×</button>
+    <h2 id="infoTitle">Title</h2>
+    <p id="infoDescription">Description</p>
+  </div>
+</div>
+
 
   <!-- Footer -->
 <footer class="footer">
@@ -482,21 +588,6 @@
       });
     });
 
-    const params = new URLSearchParams(window.location.search);
-    const courseFromURL = params.get('course');
-
-    if (courseFromURL) {
-      // Hide all panels first
-      const panels = document.querySelectorAll('.course-panel');
-      panels.forEach(panel => panel.style.display = 'none');
-
-      // Show the selected one
-      const selectedPanel = document.getElementById(courseFromURL);
-      if (selectedPanel) {
-        selectedPanel.style.display = 'block';
-        selectedPanel.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
 
   // Open popup
   function openEnquiryPopup() {
@@ -559,6 +650,21 @@ const toggleBtn = document.getElementById("menu-toggle");
       navLinks.classList.toggle("show");
     });
 
+
+    function showInfoPanel(title, description) {
+    document.getElementById('infoTitle').textContent = title;
+    document.getElementById('infoDescription').textContent = description;
+    document.getElementById('infoPanel').classList.add('active');
+  }
+
+  function closeInfoPanel() {
+    document.getElementById('infoPanel').classList.remove('active');
+  }
+
+  // Optional: Close panel if clicking outside content
+  document.getElementById('infoPanel').addEventListener('click', function (e) {
+    if (e.target === this) closeInfoPanel();
+  });
   </script>
 </body>
 </html>

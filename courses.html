@@ -364,13 +364,13 @@
           <div class="dropdown-column">
             <ul>
               <li><a href="java.html">Java Development</a></li>
-              <li><a href="python.html">Python Programming</a></li>
-              <li><a href="index.html?course=javaScript">JavaScript Mastery</a></li>
-              <li><a href="index.html?course=react">React Development</a></li>
-              <li><a href="index.html?course=cybersecurity">Cyber Security</a></li>
-              <li><a href="index.html?course=aws">AWS Cloud</a></li>
-              <li><a href="index.html?course=devops">DevOps Engineering</a></li>
-              <li><a href="index.html?course=uiux">UI/UX Design</a></li>
+                <li><a href="python.html">Python Programming</a></li>
+                <li><a href="javaScript.html">JavaScript Mastery</a></li>
+                <li><a href="react.html">React Development</a></li>
+                <li><a href="cybersecurity.html">Cyber Security</a></li>
+                <li><a href="aws.html">AWS Cloud</a></li>
+                <li><a href="devops.html">DevOps Engineering</a></li>
+                <li><a href="uiux.html">UI/UX Design</a></li>
             </ul>
           </div>
         </div>
@@ -385,7 +385,7 @@
   </div>
    </nav>
 
-<!-- Pop-up Enquiry Form 
+<!-- Pop-up Enquiry Form -->
 <div id="enquiry-popup" class="popup">
   <div class="popup-content">
     <span class="close" onclick="closeEnquiryPopup()">&times;</span>
@@ -402,7 +402,7 @@
     </form>
     <p id="successMsg" style="margin-top: 10px; color: #8ff58a; font-weight: bold;"></p>
   </div>
-</div>-->
+</div>
 
 <!-- Hero Section -->
 <section class="about-hero">
@@ -430,41 +430,46 @@
           <p>Master Python with real-world projects.</p></a>
         </div>
         <div class="course-card">
-          <div class="courses-img" style="background-image: url(javaScript.png);"></div>
-          <h3>JavaScript Mastery</h3>
-          <p>Become a JavaScript expert with hands-on projects.</p>
+          <a href="blockchain.html">
+          <div class="courses-img" style="background-image: url(blockchain.png);"></div>
+          <h3>Blockchain Developer</h3>
+          <p>Learn blockchain technology and smart contracts.</p></a>
       </div>
         <div class="course-card">
+          <a href="react.html">
           <div class="courses-img" style="background-image: url(react.png);"></div>
           <h3>React Development</h3>
-          <p>Build dynamic web apps using React.</p>
+          <p>Build dynamic web apps using React.</p></a>
         </div>
         <div class="course-card">
+          <a href="cybersecurity.html">
           <div class="courses-img" style="background-image: url(cybersecurity.png);"></div>
           <h3>Cyber Security</h3>
-          <p>Learn to protect systems and networks.</p>
+          <p>Learn to protect systems and networks.</p></a>
         </div>
         <div class="course-card">
+          <a href="aws.html">
           <div class="courses-img" style="background-image: url(aws.png);"></div>
           <h3>AWS Cloud</h3>
-          <p>Master AWS cloud services and architecture.</p>
+          <p>Master AWS cloud services and architecture.</p></a>
         </div>
         <div class="course-card">
+          <a href="devops.html">
           <div class="courses-img" style="background-image: url(devops.png);"></div>
           <h3>DevOps Engineering</h3>
-      
-          <p>Learn DevOps practices and tools.</p>
+          <p>Learn DevOps practices and tools.</p></a>
         </div>
         <div class="course-card">
+          <a href="uiux.html">
           <div class="courses-img" style="background-image: url(UI-UX.png);"></div>
           <h3>UI/UX Design</h3>
-        
-          <p>Create user-friendly interfaces and experiences.</p>
+          <p>Create user-friendly interfaces and experiences.</p></a>
         </div>
         <div class="course-card">
+          <a href="android.html">
           <div class="courses-img" style="background-image: url(mobile-dev.png);"></div>
           <h3>Android Development</h3>
-          <p>This course trains you in Android app development using Java and Kotlin ...</p>
+          <p>This course trains you in Android app development using Java and Kotlin.</p></a>
     </div>
   </section>
 
@@ -525,81 +530,97 @@
   <!-- JavaScript -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      // ✅ Fix dropdown icon click handler
-      const icon = document.getElementById("dropdown-icon");
-      const dropdown = document.getElementById("courses-dropdown");
-  
-      icon?.addEventListener("click", function (e) {
-        e.preventDefault();
-        dropdown?.classList.toggle("show");
-      });
-  
-      document.addEventListener("click", function (event) {
-        if (!dropdown?.contains(event.target) && !icon?.contains(event.target)) {
-          dropdown?.classList.remove("show");
-        }
-      });
-  
-      // ✅ Course panel from URL
-      const params = new URLSearchParams(window.location.search);
-      const courseFromURL = params.get('course');
-  
-      if (courseFromURL) {
-        const panels = document.querySelectorAll('.course-panel');
-        panels.forEach(panel => panel.style.display = 'none');
-  
-        const selectedPanel = document.getElementById(courseFromURL);
-        if (selectedPanel) {
-          selectedPanel.style.display = 'block';
-          selectedPanel.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
-  
-      // ✅ Enquiry modal handling
-     
-  function openEnquiryPopup() {
-    document.getElementById("enquiry-popup").style.display = "flex";
-  }
+    // 🔸 Dropdown icon logic
+    const icon = document.getElementById("dropdown-icon");
+    const dropdown = document.getElementById("courses-dropdown");
 
-  // Close popup
-  function closeEnquiryPopup() {
-    document.getElementById("enquiry-popup").style.display = "none";
+    icon?.addEventListener("click", function (e) {
+      e.preventDefault();
+      dropdown?.classList.toggle("show");
+    });
+
+    document.addEventListener("click", function (event) {
+      if (!dropdown?.contains(event.target) && !icon?.contains(event.target)) {
+        dropdown?.classList.remove("show");
+      }
+    });
+
+      // Open Enquiry Popup
+function openEnquiryPopup() {
+  const popup = document.getElementById("enquiry-popup");
+  popup.style.display = "flex";
+  document.body.style.overflow = "hidden"; // 🚫 Disable scroll
+}
+
+// Close Enquiry Popup with Fade-Out
+function closeEnquiryPopup() {
+  const popup = document.getElementById("enquiry-popup");
+  popup.classList.add("fade-out");
+
+  setTimeout(() => {
+    popup.style.display = "none";
+    popup.classList.remove("fade-out");
+    document.body.style.overflow = "auto"; // ✅ Enable scroll back
     document.getElementById("successMsg").textContent = "";
     document.getElementById("contactForm").reset();
-  }
+  }, 400); // Wait for fade-out animation
+}
 
-  // Handle form submission with AJAX
-  document.getElementById("contactForm").addEventListener("submit", function (e) {
-    e.preventDefault();
+// Handle form submission with AJAX
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-    const form = e.target;
-    const formData = new FormData(form);
+  const form = e.target;
+  const formData = new FormData(form);
 
-    fetch(form.action, {
-      method: "POST",
-      body: formData,
-      headers: { Accept: "application/json" }
+  fetch(form.action, {
+    method: "POST",
+    body: formData,
+    headers: { Accept: "application/json" }
+  })
+    .then(response => {
+      if (response.ok) {
+        document.getElementById("successMsg").textContent = "✅ Your message has been sent successfully!";
+        form.reset();
+
+        // Auto-close after 2.5 seconds
+        setTimeout(() => {
+          closeEnquiryPopup();
+        }, 2500);
+      } else {
+        document.getElementById("successMsg").textContent = "❌ Something went wrong. Please try again.";
+      }
     })
-      .then(response => {
-        if (response.ok) {
-          document.getElementById("successMsg").textContent = "✅ Your message has been sent successfully!";
-          form.reset();
-        } else {
-          document.getElementById("successMsg").textContent = "❌ Something went wrong. Please try again.";
-        }
-      })
-      .catch(() => {
-        document.getElementById("successMsg").textContent = "⚠️ Network error. Please try later.";
-      });
+    .catch(() => {
+      document.getElementById("successMsg").textContent = "⚠️ Network error. Please try later.";
+    });
+});
+
+// Button click to open modal
+const openBtn = document.querySelector(".enquire-now-btn");
+const popup = document.getElementById("enquiry-popup");
+
+if (openBtn) {
+  openBtn.addEventListener("click", function () {
+    popup.style.display = "flex";
   });
+}
+
+// Close popup if clicked outside content
+window.onclick = function (e) {
+  if (e.target === popup) {
+    closeEnquiryPopup();
+  }
+};
+
 
       // ✅ Hamburger menu toggle
       // Mobile menu toggle
-const menuToggle = document.getElementById("menu-toggle");
-const navLinks = document.getElementById("nav-links");
+   const menuToggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
 
-menuToggle.addEventListener("click", function () {
-  navLinks.classList.toggle("show");
+     menuToggle.addEventListener("click", function () {
+     navLinks.classList.toggle("show");
 });
 });
   </script>

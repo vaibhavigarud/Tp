@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Java Development Course</title>
+  <title>Course</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous"/>
   <link rel="icon" href="android-chrome-512x512.png" />
@@ -392,6 +392,70 @@ html {
     margin-right: 10px;
   }
 
+  /*responsive design*/
+  /*responsive design*/
+  @media (max-width: 768px) {
+
+/* Stack learn section vertically */
+.learn-section {
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 10px;
+}
+
+.learn-left,
+.learn-right {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
+
+.learn-right {
+  margin-top: 20px;
+}
+
+.learn-left ul {
+  padding-left: 0;
+}
+
+/* Fix .flex-container layout */
+.flex-container {
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.course-info-left,
+.course-info-right {
+  width: 100%;
+}
+
+/* Fix 3-column key features to stack */
+.key-features-list {
+  grid-template-columns: 1fr;
+  padding: 10px;
+}
+
+/* Adjust feature-item icon/text spacing */
+.feature-item {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+}
+
+.feature-item img {
+  height: 40px;
+  width: 40px;
+}
+
+/* Prevent content overflow */
+body, html {
+  overflow-x: hidden;
+}
+
+}
+
+
 </style>
 </head>
 <body>
@@ -428,14 +492,15 @@ html {
             <div class="dropdown-column">
               <ul>
                 <li><a href="java.html">Java Development</a></li>
-                <li><a href="index.html?course=python">Python Programming</a></li>
-                <li><a href="index.html?course=javaScript">JavaScript Mastery</a></li>
-                <li><a href="index.html?course=react">React Development</a></li>
-                <li><a href="index.html?course=cybersecurity">Cyber Security</a></li>
-                <li><a href="index.html?course=aws">AWS Cloud</a></li>
-                <li><a href="index.html?course=devops">DevOps Engineering</a></li>
-                <li><a href="index.html?course=uiux">UI/UX Design</a></li>
-              </ul>
+                <li><a href="python.html">Python Programming</a></li>
+                <li><a href="blockchain.html">blockchain development</a></li>
+                <li><a href="react.html">React Development</a></li>
+                <li><a href="cybersecurity.html">Cyber Security</a></li>
+                <li><a href="aws.html">AWS Cloud</a></li>
+                <li><a href="devops.html">DevOps Engineering</a></li>
+                <li><a href="uiux.html">UI/UX Design</a></li>
+                <li><a href="android.html">Android Development</a></li>
+                </ul>
             </div>
           </div>
         </li>
@@ -463,7 +528,7 @@ html {
     <p>Java Full Stack Development is an in-demand skill set that covers both frontend and backend development. This course provides hands-on training in Java programming, Spring Boot, RESTful APIs, and modern frontend frameworks like Angular or React.</p><br>
     <p>Java is a versatile programming language that is widely used in enterprise applications, Android development, and web applications. This course will equip you with the skills needed to build robust and scalable applications.</p><br>
 
-    <p><strong style="border-bottom: 1px solid rgb(90, 90, 94);">What Will You Learn?</strong></p><br>
+    <p><strong style="border-bottom: 1px solid rgb(90, 90, 94); font-size: 20px;">What Will You Learn?</strong></p><br>
     <p>
     This course will help you learn quickly and thoroughly. Master the essential skills required to become a proficient Java Full Stack Developer.
     </p><br>
@@ -520,7 +585,7 @@ html {
         <input type="tel" placeholder="Phone Number" required>
       </div>
       <div class="form-group">
-        <textarea placeholder="Description" optional></textarea>
+        <textarea placeholder="Description" (optional)></textarea>
       </div>
       <div class="form-group">
         <button type="submit">Submit</button>
@@ -745,7 +810,7 @@ html {
 
   // Mobile menu toggle
   document.getElementById("menu-toggle").addEventListener("click", () => {
-    document.getElementById("nav-links").classList.toggle("active");
+    document.getElementById("nav-links").classList.toggle("show");
   });
 </script>
 

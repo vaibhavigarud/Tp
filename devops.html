@@ -309,7 +309,6 @@ html {
   }
 }
 
-
 .learn-section{
   display: flex;
   justify-content: space-between;
@@ -329,13 +328,12 @@ html {
     }
 .learn-section-container p{
       font-size: 16px;
-      margin-left: 10%;
-      margin-right: 10%;
     }
 
 .learn-left {
      text-align: left;
-      flex: 1;
+     margin-right: 6%;
+    line-height: normal;
 }
 
 .learn-left strong{
@@ -344,7 +342,6 @@ html {
 
 .learn-left li {
   margin-bottom: 10px;    /* Reduce vertical space between list items */
-  line-height: 1.4;
 }
 
 .learn-right {
@@ -357,8 +354,9 @@ html {
 }
 
 .learn-right img {
-  width: 100%;
-  height: 80%;
+  max-width: 150%;
+  height: auto;
+  margin-right: 15%;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
@@ -373,23 +371,18 @@ html {
     overflow: hidden;
   }
 
- .key-features-list{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+  .key-features-list{
+    grid-template-columns: repeat(4, 1fr);
+    display: grid;
+    gap: 30px;
+    margin: 0 auto;
+    margin-left: 8%;
+    margin-right: 5%;
+    padding: 20px;
+    justify-content: space-between;
   }
-
-.key-features{
-  background: #fff;
-  padding: 20px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
 .key-features:hover{
-  transform: translateY(-8px);
+  transform: translateY(-5px);
   }
   .key-features h3{
     font-size: 17px;
@@ -401,6 +394,7 @@ html {
     margin-right: 10px;
   }
 
+  /*responsive design*/
   /*responsive design*/
   @media (max-width: 768px) {
 
@@ -501,13 +495,12 @@ body, html {
               <ul>
                 <li><a href="java.html">Java Development</a></li>
                 <li><a href="python.html">Python Programming</a></li>
-                <li><a href="blockchain.html">blockchain development</a></li>
+                <li><a href="javaScript.html">JavaScript Mastery</a></li>
                 <li><a href="react.html">React Development</a></li>
                 <li><a href="cybersecurity.html">Cyber Security</a></li>
                 <li><a href="aws.html">AWS Cloud</a></li>
                 <li><a href="devops.html">DevOps Engineering</a></li>
                 <li><a href="uiux.html">UI/UX Design</a></li>
-                <li><a href="android.html">Android Development</a></li>
               </ul>
             </div>
           </div>
@@ -525,52 +518,50 @@ body, html {
      <!-- Hero Section -->
 <section class="about-hero">
     <div class="container" style="text-align: left;">
-      <h1>Python Full Stack</h1>
-      <p>Become a proficient Python Full Stack Developer with our comprehensive course. Learn the latest technologies and frameworks to build dynamic web applications.</p>
+      <h1>DEVOPS DEVELOPMENT</h1>
+      <p>IT Training Institute in Pune offers a DevOps Development course with classroom and online training, along with 100% placement assistance.</p>
     </div>
   </section>
   <!-- Course Information Section -->
 <div class="flex-container">
   <div class="course-info-left">
     <h2 style="border-bottom: 1px solid rgb(90, 90, 94);">Career Information</h2>
-    <p>Python Full Stack Development combines Python's backend capabilities with modern frontend technologies, making it one of the easiest yet powerful stacks to learn. This course covers Django/Flask, database integration, API development, and frontend frameworks like React or Angular.</p><br>
-    <p>You'll also learn how to manage user authentication, optimise performance, and deploy applications to cloud platforms like AWS or Heroku. With hands-on projects and real-world applications, this course ensures you gain the skills needed to become a job-ready full-stack developer.</p><br>
+    <p>This course will help you master DevOps concepts quickly and effectively. DevOps is a combination of software development and IT operations, aimed at shortening the development lifecycle while delivering high-quality software. You will learn about CI/CD pipelines, automation, infrastructure as code, containerization, and cloud computing.</p><br>
+    <p>You'll be exposed to industry best practices and strategies, but, more importantly, you'll learn how to practically apply these concepts by working on real-world projects and case studies. By the end of the course, you will be skilled in using tools like Docker, Kubernetes, Jenkins, Terraform, and Ansible.</p><br>
 
     <p><strong style="border-bottom: 1px solid rgb(90, 90, 94); font-size: 20px;">What Will You Learn?</strong></p><br>
     <p>
-    This course will help you learn quickly and thoroughly. Master the essential skills required to become a proficient payton Full Stack Developer.
-    </p><br>
+        This course will help you learn quickly and effectively to master DevOps concepts and tools. Gain hands-on experience with industry-leading technologies and best practices.    </p><br>
     <div class="two-column-list">
     <ul>
-            <li><i class="fa-solid fa-circle-check"></i> Learn Python programming from basics to advanced.</li>
-            <li><i class="fa-solid fa-circle-check"></i> Work with frameworks like Django and Flask frameworks.</li>
-            <li><i class="fa-solid fa-circle-check"></i> Build dynamic and responsive web applications.</li>
-            <li><i class="fa-solid fa-circle-check"></i> Develop web applications using cloud platforms.</li>
-            <li><i class="fa-solid fa-circle-check"></i> Develop RESTful APIs with Django REST Framework.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Understand the core principles of DevOps.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Master CI/CD pipelines with Jenkins.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Deploy applications on AWS, Azure, and Google Cloud.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Monitor and troubleshoot applications with Prometheus and Grafana.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Gain expertise in agile and DevOps collaboration. </li>
     </ul>
     <ul>
-            <li><i class="fa-solid fa-circle-check"></i> Understand front-end technologies (HTML, CSS, JavaScript)</li>
-            <li><i class="fa-solid fa-circle-check"></i> Hands-on projects and real-world applications.</li>
-            <li><i class="fa-solid fa-circle-check"></i> Build a UX project from beginning to end.</li>
-            <li><i class="fa-solid fa-circle-check"></i> Version control with Git and GitHub.</li>
-            <li><i class="fa-solid fa-circle-check"></i> All the techniques used by professional full-stack developers</li>
+            <li><i class="fa-solid fa-circle-check"></i> Learn Linux, Git, and Shell Scripting.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Work with Docker and Kubernetes for containerization.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Automate infrastructure using Terraform and Ansible.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Implement security best practices in DevOps.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Work on real-world DevOps projects and case studies.</li>
         
     </ul><br>
   </div>
 
    <h2 style="border-bottom: 1px solid rgb(90, 90, 94);">Requirements</h2>
-   <p>This course will help you learn quickly and thoroughly. You will gain hands-on experience in both front-end and back-end Java development, equipping you with industry-ready skills.</p><br>
+   <p>This course will help you learn DevOps quickly and thoroughly.</p><br>
    <div class="two-column-list">
     <ul>
-            <li><i class="fa-solid fa-circle-check"></i> Basic understanding of programming concepts.</li>
-            <li><i class="fa-solid fa-circle-check"></i> Familiarity with HTML, CSS, and JavaScript(Optional but helpful).</li>
-            <li><i class="fa-solid fa-circle-check"></i> A computer with internet access for coding and project work.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Basic understanding of Linux and command-line operations.</li>
+            <li><i class="fa-solid fa-circle-check"></i> No prior Knowledge of cloud platforms like AWS, Azure, or Google Cloud.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Willingness to learn CI/CD, automation, and containerization tools.</li>
     </ul>
     <ul>
-            <li><i class="fa-solid fa-circle-check"></i> No prior Java experience required – we start from the basics!</li>
-            <li><i class="fa-solid fa-circle-check"></i> Willingness to learn and practice.</li>
-            <li><i class="fa-solid fa-circle-check"></i> Enthusiasm to build dynamic web applications from scratch.</li>
-        
+            <li><i class="fa-solid fa-circle-check"></i> Familiarity with programming and scripting (Python, Bash, or Shell)</li>
+            <li><i class="fa-solid fa-circle-check"></i> A laptop Understanding of version control using Git & GitHub.</li>
+                
     </ul><br>
    </div>
 
@@ -593,7 +584,7 @@ body, html {
         <input type="tel" placeholder="Phone Number" required>
       </div>
       <div class="form-group">
-        <textarea placeholder="Description" optional></textarea>
+        <textarea placeholder="Description" (optional)></textarea>
       </div>
       <div class="form-group">
         <button type="submit">Submit</button>
@@ -603,118 +594,118 @@ body, html {
 </div>
 
 <!-- Course Details Section -->
-<h2 style="border-bottom: 1px solid rgb(90, 90, 94); margin-left: 8%;">Python Full Stack Development: Master the Art of Web Development</h2>
-    <p style="margin-left: 8%; margin-right: 5%;">Welcome to our comprehensive Python Full Stack Development course, designed to equip you with the skills and knowledge required to excel in the ever-evolving tech industry. Whether you are a beginner or an experienced developer looking to upgrade your skills, 
-      our course has got you covered. With a focus on practical learning and hands-on experience, you will be well-prepared to take on real-world challenges and secure a lucrative career in web development.
-    </p><br>
+<h2 style="border-bottom: 1px solid rgb(90, 90, 94); margin-left: 8%;">Master the Art of DevOps: The Path to a Successful IT Career</h2>
+    <p style="margin-left: 8%; margin-right: 5%;">In today's fast-paced tech landscape, DevOps has emerged as a critical practice that bridges the gap between software development and IT operations. By fostering collaboration, automating processes, and enhancing efficiency, DevOps enables organizations to deliver high-quality software at a rapid pace.</p><br>
+    <p style="margin-left: 8%; margin-right: 5%; margin-bottom: 5%;" >If you're looking to upskill and advance your IT career, enrolling in a DevOps course is a smart move. Whether you are a beginner or an experienced professional, DevOps classes in Pune can help you master the skills required to thrive in this domain.</p>
+
 
       <!--why choose us section-->
 <section class="why-choose-us-section">
   <div class="why-choose-us-container">
-    <h2 style="border-bottom: none;">Why Choose Our Institute for Your Python Full Stack Training?</h2>
-
+    <h2 style="border-bottom: none;">Why Choose Our Institute for Your Java Development Course</h2><br>
+    
     <div class="features">
       <div class="feature-item">
         <img src="traning-img.jpg" alt="Experienced Trainers">
         <div>
-          <strong>Experienced Instructors:</strong> Learn from industry experts with years of experience in Python full-stack development.
+          <strong>Experienced Instructors:</strong> Learn from industry experts with years of experience in Devops development
         </div>
       </div>
 
       <div class="feature-item">
         <img src="internship-img.jpg" alt="Placement Assistance">
         <div>
-          <strong>Placement Assistance:</strong> We provide placement assistance to help you land your dream job. If you are looking for a Python course in Pune with placement, you've come to the right place.        </div>
+          <strong>Placement Assistance:</strong> We provide placement assistance to help you land your dream job. If you are looking for a Devops Development course in Pune with placement, you've come to the right place.
+        </div>
       </div>
 
       <div class="feature-item">
         <img src="curriculum-img.jpg" alt="Curriculum">
         <div>
-          <strong>Comprehensive Curriculum:</strong>  Our curriculum is designed to cover all aspects of full-stack development, ensuring you are well-prepared for the industry.
+          <strong>Comprehensive Curriculum:</strong> Our curriculum is designed to cover all aspects of Devops development, ensuring you are well-prepared for the industry.
         </div>
       </div>
 
       <div class="feature-item">
         <img src="task-management (1).jpg" alt="Flexible Learning">
         <div>
-          <strong>Flexible Learning Options:</strong> Choose from online or classroom formats to suit your style.
+          <strong>Flexible Learning Options:</strong> Choose from online or in-person classes to suit your learning style and schedule.
         </div>
       </div>
 
       <div class="feature-item">
         <img src="project-img.jpg" alt="Hands-on Projects">
         <div>
-          <strong>Hands-on Projects:</strong>  Gain practical experience by working on real-world projects.
+          <strong>Hands-on Projects:</strong> Gain practical experience by working on real-world projects.
         </div>
       </div>
 
       <div class="feature-item">
         <img src="certificate-img.jpg" alt="Certification">
         <div>
-          <strong>Certification:</strong>  Upon completion of the course, you will receive a Python full-stack developer course certificate, validating your skills and knowledge.
+          <strong>Certification:</strong> Upon completion of the course, you will receive a Devops developer course certificate, validating your skills and knowledge.
         </div>
       </div>
     </div>
   </section>
 
   <div class="learn-section-container">
-    <h2>What You Will Learn in Our Python Full Stack Development Course</h2>
-    <p>Our full-stack Python development course is meticulously crafted to provide you with a deep understanding of both front-end and back-end technologies. You will learn to create dynamic and responsive web applications using the powerful Python programming language, along with other essential tools and frameworks. The course curriculum includes:</p><br>
+    <h2>What You Will Learn in the DevOps Development Course?</h2>
+    <p>Our comprehensive DevOps development course provides in-depth knowledge and hands-on experience in the following key areas:</p><br>
 
     <div class="learn-section">
     <div class="learn-left">
       <ul>
-       <li><strong>Python Fundamentals: </strong>Master the core concepts of Python programming, including data types, control flow, functions, object-oriented programming, and more.</li><br>
-       <li><strong>Front-End Development: </strong> Learn HTML, CSS, and JavaScript to build user-friendly interfaces. Work with frameworks like React and Angular.</li><br>
-       <li><strong>Back-End Development:</strong> Gain expertise in Python frameworks like Django and Flask. Learn to create scalable APIs, manage databases, and implement authentication.</li><br>
-       <li><strong>Databases: </strong> Understand database concepts and work with MySQL and PostgreSQL to store and manage data efficiently.</li><br>
-       <li><strong>Version Control with Git:</strong> Master Git, the industry-standard version control system, for collaborative development and efficient code management.</li><br>
-      <li><strong>Testing and Debugging: </strong>Learn techniques for testing your code and debugging errors to ensure quality and reliability in your applications.</li><br>
-      <li><strong>Deployment: </strong>Understand how to deploy web applications to live servers, making them accessible to users worldwide.</li><br>
-      <li><strong>Project Development: </strong>Gain hands-on experience by working on real-world projects to build a strong portfolio.</li><br>
+       <li><strong>Introduction to DevOps: </strong>Understand the core concepts, principles, and benefits of DevOps in modern software development.</li><br>
+       <li><strong>CI/CD & Automation: </strong>Learn how to automate software development workflows using continuous integration and continuous deployment (CI/CD) pipelines.</li><br>
+       <li><strong>Infrastructure as Code & Cloud: </strong> Explore Infrastructure as Code (IaC) with tools like Terraform and AWS CloudFormation for automated cloud infrastructure management.</li><br>
+       <li><strong>Security & Performance Optimization: </strong> Implement best practices for securing DevOps workflows and optimizing system performance for scalability and efficiency.</li><br>
+       <li><strong>Capstone Project & Real-World Applications: </strong> Apply your knowledge to a hands-on project, solving real-world challenges in DevOps implementation.</li><br>
+      
       </ul>
     </div>
 
     <div class="learn-right">
-      <img src="python-img.png" alt="python"/>
+      <img src="devops(1)-img.png" alt="java"/>
     </div>
   </div>
 </div>
 
 <div class="key-section">
-  <h2 style="border-bottom: none; color: #000;">Key Features Of Full-stack Python Developer Course</h2>
-  
-  <div class="key-features-list">
-      <div class="key-features">
-        <div class="icon">📘</div>
-        <h3> Comprehensive Curriculum</h3>
-        <p>Master Python, Django, HTML, CSS, JavaScript, React, and more.</p>
-      </div>
+  <h2 style="border-bottom: none; color: #000;">Key Features of DevOps Course</h2>
+  <p style="margin-left: 8%; margin-right: 5%;">DevOps classes in Pune offer a range of key features designed to equip professionals with the skills and knowledge necessary for effective DevOps practices. Here are some notable features:</p><br>
 
+  <div class="key-features-list">
+    <div class="key-features">
+    <div class="icon">🎓</div>
+      <h3>AWS DevOps Certification</h3>
+      <p>comprehensive training on Amazon Web Services (AWS) tools and services.</p>
+    </div>
+  
+    
   <div class="key-features">
     <div class="icon">💻</div>
-      <h3>Hands-on Training</h3>
-      <p>Work on real-world projects and build your portfolio.</p>
-  </div>
-
-  <div class="key-features">
-    <div class="icon">🏆</div>
-    <h3>Industry-Relevant Skills</h3>
-    <p>Learn database management, API integration, and cloud deployment.</p>
+      <h3>DevOps Course Online</h3>
+      <p>we offer a robust DevOps course online. Our online platform provides access to high-quality video lectures</p>
   </div>
 
   <div class="key-features">
     <div class="icon">🎓</div>
-    <h3> Certification upon Completion</h3>
-    <p>Earn a recognized certificate to showcase your skills.</p>
+    <h3> Placement Assistance</h3>
+    <p>Get career guidance and job placement support.</p>
   </div>
 
   <div class="key-features">
-    <div class="icon">🌐</div>
-    <h3>Flexible Learning</h3>
-    <p>Choose between online or offline classes at your convenience.</p>
+    <div class="icon">🎓</div>
+    <h3> Comprehensive DevOps Certification</h3>
+    <p>Earn a recognized certificate to showcase your skills.</p>
   </div>
 </div>
+</div>
+  
+
+
+
 </div>
 
 

@@ -309,7 +309,6 @@ html {
   }
 }
 
-
 .learn-section{
   display: flex;
   justify-content: space-between;
@@ -329,13 +328,11 @@ html {
     }
 .learn-section-container p{
       font-size: 16px;
-      margin-left: 10%;
-      margin-right: 10%;
     }
 
 .learn-left {
      text-align: left;
-      flex: 1;
+     line-height: normal;
 }
 
 .learn-left strong{
@@ -343,8 +340,7 @@ html {
 }
 
 .learn-left li {
-  margin-bottom: 10px;    /* Reduce vertical space between list items */
-  line-height: 1.4;
+  margin-bottom: 10px;     /* Reduce vertical space between list items */
 }
 
 .learn-right {
@@ -358,7 +354,7 @@ html {
 
 .learn-right img {
   width: 100%;
-  height: 80%;
+  height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
@@ -373,23 +369,18 @@ html {
     overflow: hidden;
   }
 
- .key-features-list{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+  .key-features-list{
+    grid-template-columns: repeat(4, 1fr);
+    display: grid;
+    gap: 30px;
+    margin: 0 auto;
+    margin-left: 8%;
+    margin-right: 5%;
+    padding: 20px;
+    justify-content: space-between;
   }
-
-.key-features{
-  background: #fff;
-  padding: 20px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
 .key-features:hover{
-  transform: translateY(-8px);
+  transform: translateY(-5px);
   }
   .key-features h3{
     font-size: 17px;
@@ -401,6 +392,7 @@ html {
     margin-right: 10px;
   }
 
+  /*responsive design*/
   /*responsive design*/
   @media (max-width: 768px) {
 
@@ -507,8 +499,8 @@ body, html {
                 <li><a href="aws.html">AWS Cloud</a></li>
                 <li><a href="devops.html">DevOps Engineering</a></li>
                 <li><a href="uiux.html">UI/UX Design</a></li>
-                <li><a href="android.html">Android Development</a></li>
-              </ul>
+                <li><a href="android.html">android development</a></li>
+                </ul>
             </div>
           </div>
         </li>
@@ -523,198 +515,213 @@ body, html {
      </nav>
   
      <!-- Hero Section -->
-<section class="about-hero">
-    <div class="container" style="text-align: left;">
-      <h1>Python Full Stack</h1>
-      <p>Become a proficient Python Full Stack Developer with our comprehensive course. Learn the latest technologies and frameworks to build dynamic web applications.</p>
-    </div>
-  </section>
-  <!-- Course Information Section -->
-<div class="flex-container">
-  <div class="course-info-left">
-    <h2 style="border-bottom: 1px solid rgb(90, 90, 94);">Career Information</h2>
-    <p>Python Full Stack Development combines Python's backend capabilities with modern frontend technologies, making it one of the easiest yet powerful stacks to learn. This course covers Django/Flask, database integration, API development, and frontend frameworks like React or Angular.</p><br>
-    <p>You'll also learn how to manage user authentication, optimise performance, and deploy applications to cloud platforms like AWS or Heroku. With hands-on projects and real-world applications, this course ensures you gain the skills needed to become a job-ready full-stack developer.</p><br>
-
-    <p><strong style="border-bottom: 1px solid rgb(90, 90, 94); font-size: 20px;">What Will You Learn?</strong></p><br>
-    <p>
-    This course will help you learn quickly and thoroughly. Master the essential skills required to become a proficient payton Full Stack Developer.
-    </p><br>
-    <div class="two-column-list">
-    <ul>
-            <li><i class="fa-solid fa-circle-check"></i> Learn Python programming from basics to advanced.</li>
-            <li><i class="fa-solid fa-circle-check"></i> Work with frameworks like Django and Flask frameworks.</li>
-            <li><i class="fa-solid fa-circle-check"></i> Build dynamic and responsive web applications.</li>
-            <li><i class="fa-solid fa-circle-check"></i> Develop web applications using cloud platforms.</li>
-            <li><i class="fa-solid fa-circle-check"></i> Develop RESTful APIs with Django REST Framework.</li>
-    </ul>
-    <ul>
-            <li><i class="fa-solid fa-circle-check"></i> Understand front-end technologies (HTML, CSS, JavaScript)</li>
-            <li><i class="fa-solid fa-circle-check"></i> Hands-on projects and real-world applications.</li>
-            <li><i class="fa-solid fa-circle-check"></i> Build a UX project from beginning to end.</li>
-            <li><i class="fa-solid fa-circle-check"></i> Version control with Git and GitHub.</li>
-            <li><i class="fa-solid fa-circle-check"></i> All the techniques used by professional full-stack developers</li>
-        
-    </ul><br>
-  </div>
-
-   <h2 style="border-bottom: 1px solid rgb(90, 90, 94);">Requirements</h2>
-   <p>This course will help you learn quickly and thoroughly. You will gain hands-on experience in both front-end and back-end Java development, equipping you with industry-ready skills.</p><br>
-   <div class="two-column-list">
-    <ul>
-            <li><i class="fa-solid fa-circle-check"></i> Basic understanding of programming concepts.</li>
-            <li><i class="fa-solid fa-circle-check"></i> Familiarity with HTML, CSS, and JavaScript(Optional but helpful).</li>
-            <li><i class="fa-solid fa-circle-check"></i> A computer with internet access for coding and project work.</li>
-    </ul>
-    <ul>
-            <li><i class="fa-solid fa-circle-check"></i> No prior Java experience required – we start from the basics!</li>
-            <li><i class="fa-solid fa-circle-check"></i> Willingness to learn and practice.</li>
-            <li><i class="fa-solid fa-circle-check"></i> Enthusiasm to build dynamic web applications from scratch.</li>
-        
-    </ul><br>
-   </div>
-
-    <p><strong style="border-bottom: 1px solid rgb(90, 90, 94);">Career Paths:</strong> Backend Developer, Android Developer, Software Engineer</p><br>
-
-    <p><strong>Duration:</strong> 6 months &nbsp;&nbsp;&nbsp; <strong>Eligibility:</strong> B.Tech, BCA, B.Sc (CS)</p>
-  </div>
-
-<!-- Right Column (Form Card) -->
-  <div class="-course-info-right">
-    <h3>Contact Us</h3>
-    <form>
-      <div class="form-group">
-        <input type="text" placeholder="Name" required>
-      </div>
-      <div class="form-group">
-        <input type="email" placeholder="Email" required>
-      </div>
-      <div class="form-group">
-        <input type="tel" placeholder="Phone Number" required>
-      </div>
-      <div class="form-group">
-        <textarea placeholder="Description" optional></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit">Submit</button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<!-- Course Details Section -->
-<h2 style="border-bottom: 1px solid rgb(90, 90, 94); margin-left: 8%;">Python Full Stack Development: Master the Art of Web Development</h2>
-    <p style="margin-left: 8%; margin-right: 5%;">Welcome to our comprehensive Python Full Stack Development course, designed to equip you with the skills and knowledge required to excel in the ever-evolving tech industry. Whether you are a beginner or an experienced developer looking to upgrade your skills, 
-      our course has got you covered. With a focus on practical learning and hands-on experience, you will be well-prepared to take on real-world challenges and secure a lucrative career in web development.
-    </p><br>
-
-      <!--why choose us section-->
-<section class="why-choose-us-section">
-  <div class="why-choose-us-container">
-    <h2 style="border-bottom: none;">Why Choose Our Institute for Your Python Full Stack Training?</h2>
-
-    <div class="features">
-      <div class="feature-item">
-        <img src="traning-img.jpg" alt="Experienced Trainers">
-        <div>
-          <strong>Experienced Instructors:</strong> Learn from industry experts with years of experience in Python full-stack development.
+     <section class="about-hero">
+        <div class="container" style="text-align: left;">
+            <h1>BLOCKCHAIN DEVELOPMENT</h1>
+            <p>Blockchain Development is a rapidly growing field with immense opportunities in the tech industry. This course provides hands-on training in blockchain concepts, smart contract development, decentralized applications (dApps), and platforms like Ethereum and Hyperledger. Learn to build secure and scalable blockchain solutions for various industries.</p>
         </div>
-      </div>
-
-      <div class="feature-item">
-        <img src="internship-img.jpg" alt="Placement Assistance">
-        <div>
-          <strong>Placement Assistance:</strong> We provide placement assistance to help you land your dream job. If you are looking for a Python course in Pune with placement, you've come to the right place.        </div>
-      </div>
-
-      <div class="feature-item">
-        <img src="curriculum-img.jpg" alt="Curriculum">
-        <div>
-          <strong>Comprehensive Curriculum:</strong>  Our curriculum is designed to cover all aspects of full-stack development, ensuring you are well-prepared for the industry.
+    </section>
+    <!-- Course Information Section -->
+    <div class="flex-container">
+      <div class="course-info-left">
+        <h2 style="border-bottom: 1px solid rgb(90, 90, 94);">Career Information</h2>
+        <p>Blockchain Development is one of the most exciting and in-demand fields in the tech industry. With applications in finance, supply chain, healthcare, and more, blockchain technology is changing how businesses operate. This course provides hands-on training in blockchain architecture, smart contract development, decentralized applications (dApps), and blockchain platforms.</p><br>
+        <p>By mastering blockchain development, you will gain the expertise to build secure, decentralized solutions, opening doors to numerous career opportunities in a fast-evolving field.</p><br>
+    
+        <p><strong style="border-bottom: 1px solid rgb(90, 90, 94); font-size: 20px;">What Will You Learn?</strong></p><br>
+        <p>This course will help you quickly grasp the fundamental concepts and techniques required to become a proficient blockchain developer.</p><br>
+        <div class="two-column-list">
+          <ul>
+            <li><i class="fa-solid fa-circle-check"></i> Learn blockchain fundamentals and key concepts like decentralized ledgers and consensus algorithms.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Develop smart contracts using Solidity and deploy them on platforms like Ethereum.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Understand and implement blockchain consensus algorithms like Proof of Work and Proof of Stake.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Build decentralized applications (dApps) that interact with blockchain networks.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Work with popular blockchain platforms like Ethereum, Hyperledger, and others.</li>
+          </ul>
+          <ul>
+            <li><i class="fa-solid fa-circle-check"></i> Learn how to design and implement secure blockchain systems.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Explore blockchain-based tokens, NFTs, and their applications in various industries.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Gain hands-on experience by building real-world blockchain applications.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Understand blockchain architecture, cryptography, and security protocols.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Learn how to integrate blockchain solutions with existing business processes.</li>
+          </ul><br>
         </div>
+    
+       <h2 style="border-bottom: 1px solid rgb(90, 90, 94);">Requirements</h2>
+       <p>This course is designed to be beginner-friendly, with a focus on hands-on learning to help you understand and apply blockchain concepts.</p><br>
+       <div class="two-column-list">
+         <ul>
+           <li><i class="fa-solid fa-circle-check"></i> Basic understanding of programming concepts and languages like JavaScript, Python, or C++.</li>
+           <li><i class="fa-solid fa-circle-check"></i> Familiarity with cryptography concepts (optional but helpful).</li>
+           <li><i class="fa-solid fa-circle-check"></i> A computer with internet access for coding and project work.</li>
+         </ul>
+         <ul>
+           <li><i class="fa-solid fa-circle-check"></i> No prior blockchain experience required – we start from the basics!</li>
+           <li><i class="fa-solid fa-circle-check"></i> Willingness to learn and apply new technologies.</li>
+           <li><i class="fa-solid fa-circle-check"></i> Enthusiasm for working on decentralized solutions and blockchain technologies.</li>
+         </ul><br>
+       </div>
+    
       </div>
-
-      <div class="feature-item">
-        <img src="task-management (1).jpg" alt="Flexible Learning">
-        <div>
-          <strong>Flexible Learning Options:</strong> Choose from online or classroom formats to suit your style.
-        </div>
-      </div>
-
-      <div class="feature-item">
-        <img src="project-img.jpg" alt="Hands-on Projects">
-        <div>
-          <strong>Hands-on Projects:</strong>  Gain practical experience by working on real-world projects.
-        </div>
-      </div>
-
-      <div class="feature-item">
-        <img src="certificate-img.jpg" alt="Certification">
-        <div>
-          <strong>Certification:</strong>  Upon completion of the course, you will receive a Python full-stack developer course certificate, validating your skills and knowledge.
-        </div>
+    
+    <!-- Right Column (Form Card) -->
+      <div class="-course-info-right">
+        <h3>Contact Us</h3>
+        <form>
+          <div class="form-group">
+            <input type="text" placeholder="Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Email" required>
+          </div>
+          <div class="form-group">
+            <input type="tel" placeholder="Phone Number" required>
+          </div>
+          <div class="form-group">
+            <textarea placeholder="Description" (optional)></textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit">Submit</button>
+          </div>
+        </form>
       </div>
     </div>
-  </section>
-
-  <div class="learn-section-container">
-    <h2>What You Will Learn in Our Python Full Stack Development Course</h2>
-    <p>Our full-stack Python development course is meticulously crafted to provide you with a deep understanding of both front-end and back-end technologies. You will learn to create dynamic and responsive web applications using the powerful Python programming language, along with other essential tools and frameworks. The course curriculum includes:</p><br>
-
-    <div class="learn-section">
-    <div class="learn-left">
-      <ul>
-       <li><strong>Python Fundamentals: </strong>Master the core concepts of Python programming, including data types, control flow, functions, object-oriented programming, and more.</li><br>
-       <li><strong>Front-End Development: </strong> Learn HTML, CSS, and JavaScript to build user-friendly interfaces. Work with frameworks like React and Angular.</li><br>
-       <li><strong>Back-End Development:</strong> Gain expertise in Python frameworks like Django and Flask. Learn to create scalable APIs, manage databases, and implement authentication.</li><br>
-       <li><strong>Databases: </strong> Understand database concepts and work with MySQL and PostgreSQL to store and manage data efficiently.</li><br>
-       <li><strong>Version Control with Git:</strong> Master Git, the industry-standard version control system, for collaborative development and efficient code management.</li><br>
-      <li><strong>Testing and Debugging: </strong>Learn techniques for testing your code and debugging errors to ensure quality and reliability in your applications.</li><br>
-      <li><strong>Deployment: </strong>Understand how to deploy web applications to live servers, making them accessible to users worldwide.</li><br>
-      <li><strong>Project Development: </strong>Gain hands-on experience by working on real-world projects to build a strong portfolio.</li><br>
-      </ul>
+    
+    <!-- Course Details Section -->
+    <h2 style="border-bottom: 1px solid rgb(90, 90, 94); margin-left: 8%;">Transform Your Career with Our Blockchain Development Course</h2>
+    <p style="margin-left: 8%; margin-right: 5%;">Join our Blockchain Development course and take the first step toward a rewarding career in blockchain technology. Whether you're a beginner or an experienced developer, this course will equip you with the skills needed to succeed in the decentralized digital economy.</p><br>
+    
+    <!-- why choose us section -->
+    <section class="why-choose-us-section">
+      <div class="why-choose-us-container">
+        <h2 style="border-bottom: none;">Why Choose Our Institute for Your Blockchain Development Course</h2>
+        <p>Our Blockchain Development course is designed to provide you with the skills and knowledge needed to excel in the blockchain industry. Here are some reasons why you should choose us:</p><br>
+    
+        <div class="features">
+          <div class="feature-item">
+            <img src="traning-img.jpg" alt="Experienced Trainers">
+            <div>
+              <strong>Experienced Instructors:</strong> Learn from industry experts with years of experience in blockchain development.
+            </div>
+          </div>
+    
+          <div class="feature-item">
+            <img src="internship-img.jpg" alt="Placement Assistance">
+            <div>
+              <strong>Placement Assistance:</strong> We help you land your dream job with complete placement support in the blockchain industry.
+            </div>
+          </div>
+    
+          <div class="feature-item">
+            <img src="curriculum-img.jpg" alt="Curriculum">
+            <div>
+              <strong>Comprehensive Curriculum:</strong> Covers all key areas of blockchain development, including smart contracts, dApps, and blockchain platforms.
+            </div>
+          </div>
+    
+          <div class="feature-item">
+            <img src="task-management (1).jpg" alt="Flexible Learning">
+            <div>
+              <strong>Flexible Learning Options:</strong> Choose from online or classroom formats to suit your learning style.
+            </div>
+          </div>
+    
+          <div class="feature-item">
+            <img src="project-img.jpg" alt="Hands-on Projects">
+            <div>
+              <strong>Hands-on Projects:</strong> Gain real-world experience by building decentralized applications during the course.
+            </div>
+          </div>
+    
+          <div class="feature-item">
+            <img src="certificate-img.jpg" alt="Certification">
+            <div>
+              <strong>Certification:</strong> Receive a certificate validating your blockchain development skills and knowledge.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <div class="learn-section-container">
+      <h2>What Will You Learn, in Our Blockchain Development Course?</h2>
+      <p>Our Blockchain Development course is designed to provide you with the skills and knowledge needed to excel in the field of blockchain technology:</p><br>
+    
+      <div class="learn-section">
+        <div class="learn-left">
+          <ul>
+            <li><strong>Blockchain Fundamentals:</strong> Learn the core concepts and technologies behind blockchain systems.</li><br>
+            <li><strong>Smart Contracts:</strong> Develop smart contracts using Solidity for Ethereum-based blockchain applications.</li><br>
+            <li><strong>Decentralized Applications (dApps):</strong> Build decentralized applications that interact with blockchain networks.</li><br>
+            <li><strong>Cryptography & Security:</strong> Understand encryption, hashing, and digital signatures essential for secure blockchain solutions.</li><br>
+            <li><strong>Ethereum & Hyperledger:</strong> Work with blockchain platforms to build and deploy applications.</li><br>
+            <li><strong>Consensus Algorithms:</strong> Study consensus mechanisms like Proof of Work (PoW) and Proof of Stake (PoS).</li><br>
+            <li><strong>Tokens & NFTs:</strong> Learn about creating and deploying tokens and NFTs on blockchain networks.</li><br>
+            <li><strong>Blockchain Integration:</strong> Learn how to integrate blockchain solutions with existing business processes and applications.</li><br>
+          </ul>
+        </div>
+    
+        <div class="learn-right">
+          <img src="Blockchain-img.png" alt="blockchain"/>
+        </div>
+      </div>
     </div>
-
-    <div class="learn-right">
-      <img src="python-img.png" alt="python"/>
-    </div>
-  </div>
-</div>
+    
 
 <div class="key-section">
-  <h2 style="border-bottom: none; color: #000;">Key Features Of Full-stack Python Developer Course</h2>
+  <h2 style="border-bottom: none; color: #000;">Key Features of Blockchain Development Training Course</h2>
+  <p>A Blockchain Development Training Course would typically offer the following key features:</p><br>
   
   <div class="key-features-list">
-      <div class="key-features">
-        <div class="icon">📘</div>
-        <h3> Comprehensive Curriculum</h3>
-        <p>Master Python, Django, HTML, CSS, JavaScript, React, and more.</p>
-      </div>
-
-  <div class="key-features">
-    <div class="icon">💻</div>
-      <h3>Hands-on Training</h3>
-      <p>Work on real-world projects and build your portfolio.</p>
+    <div class="key-features">
+      <div class="icon">🔗</div>
+      <h3>Hands-on Blockchain Projects</h3>
+      <p>Work on real-world blockchain applications and smart contracts to gain practical, project-based experience.</p>
+    </div>
+  
+    <div class="key-features">
+      <div class="icon">💻</div>
+      <h3>Live Coding Sessions</h3>
+      <p>Participate in instructor-led sessions focused on blockchain coding with Solidity, Web3.js, and more.</p>
+    </div>
+  
+    <div class="key-features">
+      <div class="icon">🎯</div>
+      <h3>Placement Assistance</h3>
+      <p>Receive job search support, interview guidance, and networking opportunities in the blockchain space.</p>
+    </div>
+  
+    <div class="key-features">
+      <div class="icon">🎓</div>
+      <h3>Certification upon Completion</h3>
+      <p>Earn an industry-recognized certificate validating your blockchain development expertise.</p>
+    </div>
+  
+    <div class="key-features">
+      <div class="icon">🌐</div>
+      <h3>Flexible Learning</h3>
+      <p>Access course content online at your own pace with both self-paced and live training options.</p>
+    </div>
+  
+    <div class="key-features">
+      <div class="icon">👨‍🏫</div>
+      <h3>Expert Instructors</h3>
+      <p>Learn from blockchain professionals with hands-on experience in Ethereum, Hyperledger, and dApps.</p>
+    </div>
+  
+    <div class="key-features">
+      <div class="icon">📚</div>
+      <h3>Comprehensive Curriculum</h3>
+      <p>Master blockchain fundamentals, smart contract development, dApp architecture, and deployment.</p>
+    </div>
+  
+    <div class="key-features">
+      <div class="icon">📝</div>
+      <h3>Interview Preparation</h3>
+      <p>Benefit from mock interviews, resume tips, and career coaching focused on blockchain roles.</p>
+    </div>
   </div>
 
-  <div class="key-features">
-    <div class="icon">🏆</div>
-    <h3>Industry-Relevant Skills</h3>
-    <p>Learn database management, API integration, and cloud deployment.</p>
-  </div>
-
-  <div class="key-features">
-    <div class="icon">🎓</div>
-    <h3> Certification upon Completion</h3>
-    <p>Earn a recognized certificate to showcase your skills.</p>
-  </div>
-
-  <div class="key-features">
-    <div class="icon">🌐</div>
-    <h3>Flexible Learning</h3>
-    <p>Choose between online or offline classes at your convenience.</p>
-  </div>
-</div>
 </div>
 
 

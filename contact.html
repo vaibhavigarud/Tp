@@ -390,16 +390,15 @@ body {
             <div class="dropdown-content" id="courses-dropdown">
               <div class="dropdown-column">
                 <ul>
-                  <li><a href="index.html?course=java">Java Development</a></li>
-                  <li><a href="index.html?course=python">Python Programming</a></li>
-                  <li><a href="index.html?course=javaScript">JavaScript Mastery</a></li>
-                  <li><a href="index.html?course=react">React Development</a></li>
-                  <li><a href="index.html?course=cybersecurity">Cyber Security</a></li>
-                  <li><a href="index.html?course=aws">AWS Cloud</a></li>
-                  <li><a href="index.html?course=devops">DevOps Engineering</a></li>
-                  <li><a href="index.html?course=uiux">UI/UX Design</a></li>
-                  <li><a href="index.html?course=java">Java</a></li>
-                  <li><a href="index.html?course=cybersecurity">Cyber Security</a></li>
+                  <li><a href="java.html">Java Development</a></li>
+                <li><a href="python.html">Python Programming</a></li>
+                <li><a href="blockchain.html">blockchain development</a></li>
+                <li><a href="react.html">React Development</a></li>
+                <li><a href="cybersecurity.html">Cyber Security</a></li>
+                <li><a href="aws.html">AWS Cloud</a></li>
+                <li><a href="devops.html">DevOps Engineering</a></li>
+                <li><a href="uiux.html">UI/UX Design</a></li>
+                <li><a href="android.html">Android Development</a></li>
                 </ul>
               </div>
             </div>
@@ -436,7 +435,7 @@ body {
     
       <!-- Hero Section -->
 <section class="contact-hero">
-    <div class="container" style="text-align: left;">
+    <div class="container" style="text-align: left; margin-left: 10%;">
       <h1>CONTACT US</h1>
       <p>Get in touch with us for any queries about our courses and programs.</p>
     </div>
@@ -470,7 +469,7 @@ body {
     <input type="tel" id="phone" placeholder="Phone Number" required>
     <textarea id="desc" placeholder="Description" rows="4" required></textarea>
     <button type="submit">Submit</button>
-    <p id="successMsg" style="margin-top: 10px; color: green; font-weight: bold;"></p>
+    <p id="successMessage" style="color: green;" ></p>
   </form>
 </div>    
     </div>
@@ -543,7 +542,6 @@ body {
 <script>
 
 document.addEventListener("DOMContentLoaded", function () {
-  document.addEventListener("DOMContentLoaded", function () {
       const icon = document.getElementById("dropdown-icon");
       const dropdown = document.getElementById("courses-dropdown");
 
@@ -559,70 +557,40 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
       
-    const params = new URLSearchParams(window.location.search);
-    const courseFromURL = params.get('course');
-
-    if (courseFromURL) {
-      // Hide all panels first
-      const panels = document.querySelectorAll('.course-panel');
-      panels.forEach(panel => panel.style.display = 'none');
-
-      // Show the selected one
-      const selectedPanel = document.getElementById(courseFromURL);
-      if (selectedPanel) {
-        selectedPanel.style.display = 'block';
-        selectedPanel.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  });
-
-      // Handle course from URL (if any)
-    const params = new URLSearchParams(window.location.search);
-    const courseFromURL = params.get('course');
-
-    if (courseFromURL) {
-      const panels = document.querySelectorAll('.course-panel');
-      panels.forEach(panel => panel.style.display = 'none');
-
-      const selectedPanel = document.getElementById(courseFromURL);
-      if (selectedPanel) {
-        selectedPanel.style.display = 'block';
-        selectedPanel.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
 
     // Contact Form Submission
     document.addEventListener("DOMContentLoaded", function () {
+  // your code here
     const contactForm = document.getElementById("contactForm");
-    const successMsg = document.getElementById("successMsg");
+    const successMsg = contactForm.querySelector("#successMessage");
 
-    contactForm.addEventListener("submit", function (e) {
-      e.preventDefault();
+contactForm.addEventListener("submit", function (e) {
+  e.preventDefault();
 
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const phone = document.getElementById("phone").value.trim();
-      const desc = document.getElementById("desc").value.trim();
+  const name = contactForm.querySelector("#name").value.trim();
+  const email = contactForm.querySelector("#email").value.trim();
+  const phone = contactForm.querySelector("#phone").value.trim();
+  const desc = contactForm.querySelector("#desc").value.trim();
 
-      if (!name || !email || !phone || !desc) {
-        alert("⚠️ Please fill in all the fields.");
-        return;
-      }
+  if (!name || !email || !phone || !desc) {
+    alert("⚠️ Please fill in all the fields.");
+    return;
+  }
 
-      if (!/\S+@\S+\.\S+/.test(email)) {
-        alert("⚠️ Please enter a valid email address.");
-        return;
-      }
+  if (!/\S+@\S+\.\S+/.test(email)) {
+    alert("⚠️ Please enter a valid email address.");
+    return;
+  }
+});
 
-      successMsg.textContent = "✅ Your message has been sent successfully!";
-      contactForm.reset();
+  successMsg.textContent = "✅ Your message has been sent successfully!";
+  contactForm.reset();
 
-      // Clear message after 5 seconds
-     setTimeout(() => {
-       successMsg.textContent = "";
-     }, 5000);
-    });
-  });
+  setTimeout(() => {
+    successMsg.textContent = "";
+  }, 5000);
+});
+
 
     // Open popup
     function openEnquiryPopup() {
@@ -689,6 +657,7 @@ const toggleBtn = document.getElementById("menu-toggle");
       drop.parentElement.classList.toggle('open');
     });
   });
+
 
 </script>
 

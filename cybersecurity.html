@@ -309,7 +309,6 @@ html {
   }
 }
 
-
 .learn-section{
   display: flex;
   justify-content: space-between;
@@ -329,13 +328,11 @@ html {
     }
 .learn-section-container p{
       font-size: 16px;
-      margin-left: 10%;
-      margin-right: 10%;
     }
 
 .learn-left {
      text-align: left;
-      flex: 1;
+     line-height: normal;
 }
 
 .learn-left strong{
@@ -343,8 +340,8 @@ html {
 }
 
 .learn-left li {
-  margin-bottom: 10px;    /* Reduce vertical space between list items */
-  line-height: 1.4;
+  margin-bottom: 10px;     /* Reduce vertical space between list items */
+
 }
 
 .learn-right {
@@ -358,7 +355,7 @@ html {
 
 .learn-right img {
   width: 100%;
-  height: 80%;
+  height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
@@ -373,23 +370,18 @@ html {
     overflow: hidden;
   }
 
- .key-features-list{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+  .key-features-list{
+    grid-template-columns: repeat(4, 1fr);
+    display: grid;
+    gap: 30px;
+    margin: 0 auto;
+    margin-left: 8%;
+    margin-right: 5%;
+    padding: 20px;
+    justify-content: space-between;
   }
-
-.key-features{
-  background: #fff;
-  padding: 20px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
 .key-features:hover{
-  transform: translateY(-8px);
+  transform: translateY(-5px);
   }
   .key-features h3{
     font-size: 17px;
@@ -401,6 +393,7 @@ html {
     margin-right: 10px;
   }
 
+  /*responsive design*/
   /*responsive design*/
   @media (max-width: 768px) {
 
@@ -501,14 +494,13 @@ body, html {
               <ul>
                 <li><a href="java.html">Java Development</a></li>
                 <li><a href="python.html">Python Programming</a></li>
-                <li><a href="blockchain.html">blockchain development</a></li>
+                <li><a href="javaScript.html">JavaScript Mastery</a></li>
                 <li><a href="react.html">React Development</a></li>
                 <li><a href="cybersecurity.html">Cyber Security</a></li>
                 <li><a href="aws.html">AWS Cloud</a></li>
                 <li><a href="devops.html">DevOps Engineering</a></li>
                 <li><a href="uiux.html">UI/UX Design</a></li>
-                <li><a href="android.html">Android Development</a></li>
-              </ul>
+                </ul>
             </div>
           </div>
         </li>
@@ -525,58 +517,55 @@ body, html {
      <!-- Hero Section -->
 <section class="about-hero">
     <div class="container" style="text-align: left;">
-      <h1>Python Full Stack</h1>
-      <p>Become a proficient Python Full Stack Developer with our comprehensive course. Learn the latest technologies and frameworks to build dynamic web applications.</p>
+      <h1>Cybersecurity</h1>
+        <p>In today's digital age, cybersecurity is more important than ever. Our course equips you with the skills to safeguard systems and networks from cyber threats.</p>
     </div>
   </section>
   <!-- Course Information Section -->
 <div class="flex-container">
   <div class="course-info-left">
     <h2 style="border-bottom: 1px solid rgb(90, 90, 94);">Career Information</h2>
-    <p>Python Full Stack Development combines Python's backend capabilities with modern frontend technologies, making it one of the easiest yet powerful stacks to learn. This course covers Django/Flask, database integration, API development, and frontend frameworks like React or Angular.</p><br>
-    <p>You'll also learn how to manage user authentication, optimise performance, and deploy applications to cloud platforms like AWS or Heroku. With hands-on projects and real-world applications, this course ensures you gain the skills needed to become a job-ready full-stack developer.</p><br>
+    <p>Cybersecurity is a critical field that focuses on protecting computer systems, networks, and data from cyber threats. With the increasing reliance on technology, the demand for cybersecurity professionals is at an all-time high.</p><br>
+    <p>Cybersecurity is a rapidly growing field with a high demand for skilled professionals. This course will prepare you for a successful career in protecting sensitive information and systems.</p><br>
+
 
     <p><strong style="border-bottom: 1px solid rgb(90, 90, 94); font-size: 20px;">What Will You Learn?</strong></p><br>
     <p>
-    This course will help you learn quickly and thoroughly. Master the essential skills required to become a proficient payton Full Stack Developer.
+    This course will help you learn quickly and thoroughly. Master the essential skills required to become a proficient Cybersecurity Engineering.
     </p><br>
     <div class="two-column-list">
-    <ul>
-            <li><i class="fa-solid fa-circle-check"></i> Learn Python programming from basics to advanced.</li>
-            <li><i class="fa-solid fa-circle-check"></i> Work with frameworks like Django and Flask frameworks.</li>
-            <li><i class="fa-solid fa-circle-check"></i> Build dynamic and responsive web applications.</li>
-            <li><i class="fa-solid fa-circle-check"></i> Develop web applications using cloud platforms.</li>
-            <li><i class="fa-solid fa-circle-check"></i> Develop RESTful APIs with Django REST Framework.</li>
-    </ul>
-    <ul>
-            <li><i class="fa-solid fa-circle-check"></i> Understand front-end technologies (HTML, CSS, JavaScript)</li>
-            <li><i class="fa-solid fa-circle-check"></i> Hands-on projects and real-world applications.</li>
-            <li><i class="fa-solid fa-circle-check"></i> Build a UX project from beginning to end.</li>
-            <li><i class="fa-solid fa-circle-check"></i> Version control with Git and GitHub.</li>
-            <li><i class="fa-solid fa-circle-check"></i> All the techniques used by professional full-stack developers</li>
-        
-    </ul><br>
+        <ul>
+            <li><i class="fa-solid fa-circle-check"></i> Learn cybersecurity fundamentals from basics to advanced levels.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Understand ethical hacking, penetration testing, and vulnerability assessment.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Protect systems against malware, phishing, and ransomware attacks.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Explore network security, firewalls, and intrusion detection systems (IDS).</li>
+            <li><i class="fa-solid fa-circle-check"></i> Learn to secure applications and deploy them on secure cloud platforms.</li>
+          </ul>
+          <ul>
+            <li><i class="fa-solid fa-circle-check"></i> Gain knowledge of operating systems, TCP/IP, and system architecture.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Hands-on labs with real-world attack simulations and defense strategies.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Learn about cybersecurity tools like Wireshark, Nmap, and Metasploit.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Version control and documentation using Git and GitHub.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Master the techniques and tools used by professional cybersecurity analysts.</li>
+          </ul><br>
+          
   </div>
 
    <h2 style="border-bottom: 1px solid rgb(90, 90, 94);">Requirements</h2>
-   <p>This course will help you learn quickly and thoroughly. You will gain hands-on experience in both front-end and back-end Java development, equipping you with industry-ready skills.</p><br>
-   <div class="two-column-list">
-    <ul>
-            <li><i class="fa-solid fa-circle-check"></i> Basic understanding of programming concepts.</li>
-            <li><i class="fa-solid fa-circle-check"></i> Familiarity with HTML, CSS, and JavaScript(Optional but helpful).</li>
-            <li><i class="fa-solid fa-circle-check"></i> A computer with internet access for coding and project work.</li>
-    </ul>
-    <ul>
-            <li><i class="fa-solid fa-circle-check"></i> No prior Java experience required – we start from the basics!</li>
-            <li><i class="fa-solid fa-circle-check"></i> Willingness to learn and practice.</li>
-            <li><i class="fa-solid fa-circle-check"></i> Enthusiasm to build dynamic web applications from scratch.</li>
-        
-    </ul><br>
-   </div>
+   <p>This course will help you learn quickly and thoroughly. You will gain hands-on experience in core cybersecurity practices and tools, equipping you with industry-ready skills to secure systems and networks.</p><br>
+<div class="two-column-list">
+  <ul>
+    <li><i class="fa-solid fa-circle-check"></i> Basic understanding of computer systems and networking.</li>
+    <li><i class="fa-solid fa-circle-check"></i> Familiarity with operating systems like Windows and Linux (Optional but helpful).</li>
+    <li><i class="fa-solid fa-circle-check"></i> A computer with internet access for labs and security testing.</li>
+  </ul>
+  <ul>
+    <li><i class="fa-solid fa-circle-check"></i> No prior cybersecurity experience required – we start from the basics!</li>
+    <li><i class="fa-solid fa-circle-check"></i> Willingness to learn and explore real-world attack scenarios.</li>
+    <li><i class="fa-solid fa-circle-check"></i> Enthusiasm to build a career in ethical hacking and cyber defense.</li>
+  </ul><br>
+</div>
 
-    <p><strong style="border-bottom: 1px solid rgb(90, 90, 94);">Career Paths:</strong> Backend Developer, Android Developer, Software Engineer</p><br>
-
-    <p><strong>Duration:</strong> 6 months &nbsp;&nbsp;&nbsp; <strong>Eligibility:</strong> B.Tech, BCA, B.Sc (CS)</p>
   </div>
 
 <!-- Right Column (Form Card) -->
@@ -593,7 +582,7 @@ body, html {
         <input type="tel" placeholder="Phone Number" required>
       </div>
       <div class="form-group">
-        <textarea placeholder="Description" optional></textarea>
+        <textarea placeholder="Description" (optional)></textarea>
       </div>
       <div class="form-group">
         <button type="submit">Submit</button>
@@ -603,118 +592,146 @@ body, html {
 </div>
 
 <!-- Course Details Section -->
-<h2 style="border-bottom: 1px solid rgb(90, 90, 94); margin-left: 8%;">Python Full Stack Development: Master the Art of Web Development</h2>
-    <p style="margin-left: 8%; margin-right: 5%;">Welcome to our comprehensive Python Full Stack Development course, designed to equip you with the skills and knowledge required to excel in the ever-evolving tech industry. Whether you are a beginner or an experienced developer looking to upgrade your skills, 
-      our course has got you covered. With a focus on practical learning and hands-on experience, you will be well-prepared to take on real-world challenges and secure a lucrative career in web development.
-    </p><br>
+<h2 style="border-bottom: 1px solid rgb(90, 90, 94); margin-left: 8%;">Transform Your Career with Our Cybersecurity Course</h2>
+<p style="margin-left: 8%; margin-right: 5%;">
+  Join our Cybersecurity course and take the first step toward a future-proof career in information security.
+  Whether you're just starting out or looking to strengthen your defense skills, this course is designed to guide you to success.
+  For aspiring professionals and seasoned IT experts alike, our <strong>Cybersecurity training program</strong> provides the knowledge and hands-on practice needed to thrive in today’s digital threat landscape.
+</p><br>
 
       <!--why choose us section-->
 <section class="why-choose-us-section">
   <div class="why-choose-us-container">
-    <h2 style="border-bottom: none;">Why Choose Our Institute for Your Python Full Stack Training?</h2>
+    <h2 style="border-bottom: none;">Why Choose Our Institute for Your cybersecurity Course</h2>
 
     <div class="features">
-      <div class="feature-item">
-        <img src="traning-img.jpg" alt="Experienced Trainers">
-        <div>
-          <strong>Experienced Instructors:</strong> Learn from industry experts with years of experience in Python full-stack development.
+        <div class="feature-item">
+          <img src="traning-img.jpg" alt="Experienced Instructors">
+          <div>
+            <strong>Experienced Instructors:</strong> Learn from cybersecurity professionals with real-world defense and ethical hacking experience.
+          </div>
         </div>
-      </div>
-
-      <div class="feature-item">
-        <img src="internship-img.jpg" alt="Placement Assistance">
-        <div>
-          <strong>Placement Assistance:</strong> We provide placement assistance to help you land your dream job. If you are looking for a Python course in Pune with placement, you've come to the right place.        </div>
-      </div>
-
-      <div class="feature-item">
-        <img src="curriculum-img.jpg" alt="Curriculum">
-        <div>
-          <strong>Comprehensive Curriculum:</strong>  Our curriculum is designed to cover all aspects of full-stack development, ensuring you are well-prepared for the industry.
+      
+        <div class="feature-item">
+          <img src="internship-img.jpg" alt="Placement Assistance">
+          <div>
+            <strong>Placement Assistance:</strong> Get support to secure roles in security operations centers (SOCs), consulting, and compliance roles.
+          </div>
         </div>
-      </div>
-
-      <div class="feature-item">
-        <img src="task-management (1).jpg" alt="Flexible Learning">
-        <div>
-          <strong>Flexible Learning Options:</strong> Choose from online or classroom formats to suit your style.
+      
+        <div class="feature-item">
+          <img src="curriculum-img.jpg" alt="Curriculum">
+          <div>
+            <strong>Comprehensive Curriculum:</strong> Covers threat analysis, ethical hacking, penetration testing, and network security.
+          </div>
         </div>
-      </div>
-
-      <div class="feature-item">
-        <img src="project-img.jpg" alt="Hands-on Projects">
-        <div>
-          <strong>Hands-on Projects:</strong>  Gain practical experience by working on real-world projects.
+      
+        <div class="feature-item">
+          <img src="task-management (1).jpg" alt="Flexible Learning">
+          <div>
+            <strong>Flexible Learning Options:</strong> Choose between live online sessions or in-person training based on your convenience.
+          </div>
         </div>
-      </div>
-
-      <div class="feature-item">
-        <img src="certificate-img.jpg" alt="Certification">
-        <div>
-          <strong>Certification:</strong>  Upon completion of the course, you will receive a Python full-stack developer course certificate, validating your skills and knowledge.
+      
+        <div class="feature-item">
+          <img src="project-img.jpg" alt="Hands-on Labs">
+          <div>
+            <strong>Hands-on Labs:</strong> Practice real-world cyber attacks and defenses in controlled environments.
+          </div>
         </div>
+      
+        <div class="feature-item">
+          <img src="certificate-img.jpg" alt="Certification">
+          <div>
+            <strong>Certification:</strong> Earn a certificate that demonstrates your cybersecurity expertise to employers.
+          </div>
       </div>
     </div>
   </section>
 
   <div class="learn-section-container">
-    <h2>What You Will Learn in Our Python Full Stack Development Course</h2>
-    <p>Our full-stack Python development course is meticulously crafted to provide you with a deep understanding of both front-end and back-end technologies. You will learn to create dynamic and responsive web applications using the powerful Python programming language, along with other essential tools and frameworks. The course curriculum includes:</p><br>
-
+    <h2>What Will You Learn in Our Cybersecurity Course?</h2>
+    <p>Our Cybersecurity course is designed to equip you with the knowledge and hands-on experience required to protect systems, networks, and data in today’s digital world:</p><br>
+  
     <div class="learn-section">
-    <div class="learn-left">
-      <ul>
-       <li><strong>Python Fundamentals: </strong>Master the core concepts of Python programming, including data types, control flow, functions, object-oriented programming, and more.</li><br>
-       <li><strong>Front-End Development: </strong> Learn HTML, CSS, and JavaScript to build user-friendly interfaces. Work with frameworks like React and Angular.</li><br>
-       <li><strong>Back-End Development:</strong> Gain expertise in Python frameworks like Django and Flask. Learn to create scalable APIs, manage databases, and implement authentication.</li><br>
-       <li><strong>Databases: </strong> Understand database concepts and work with MySQL and PostgreSQL to store and manage data efficiently.</li><br>
-       <li><strong>Version Control with Git:</strong> Master Git, the industry-standard version control system, for collaborative development and efficient code management.</li><br>
-      <li><strong>Testing and Debugging: </strong>Learn techniques for testing your code and debugging errors to ensure quality and reliability in your applications.</li><br>
-      <li><strong>Deployment: </strong>Understand how to deploy web applications to live servers, making them accessible to users worldwide.</li><br>
-      <li><strong>Project Development: </strong>Gain hands-on experience by working on real-world projects to build a strong portfolio.</li><br>
-      </ul>
-    </div>
+      <div class="learn-left">
+        <ul>
+          <li><strong>Networking Fundamentals:</strong> Understand how networks operate and how to secure them.</li><br>
+          <li><strong>Linux Essentials:</strong> Learn the basics of Linux, a vital OS in cybersecurity environments.</li><br>
+          <li><strong>Ethical Hacking:</strong> Discover vulnerabilities using tools and techniques used by ethical hackers.</li><br>
+          <li><strong>Penetration Testing:</strong> Simulate cyberattacks to test the defenses of systems and applications.</li><br>
+          <li><strong>Security Tools:</strong> Work with industry-standard tools like Wireshark, Metasploit, and Nmap.</li><br>
+          <li><strong>Threat Detection & Analysis:</strong> Learn to identify, analyze, and respond to cyber threats.</li><br>
+          <li><strong>Incident Response:</strong> Master strategies for responding to and recovering from security incidents.</li><br>
+          <li><strong>SIEM Tools:</strong> Use tools like Splunk and ELK Stack for log analysis and monitoring.</li><br>
+          <li><strong>Compliance & Governance:</strong> Understand frameworks like GDPR, ISO 27001, and NIST.</li><br>
+        </ul>
+      </div>
+   
 
     <div class="learn-right">
-      <img src="python-img.png" alt="python"/>
+      <img src="Cybersecurity-img.png" alt="cybersecurity"/>
     </div>
   </div>
 </div>
 
 <div class="key-section">
-  <h2 style="border-bottom: none; color: #000;">Key Features Of Full-stack Python Developer Course</h2>
-  
-  <div class="key-features-list">
+    <h2 style="border-bottom: none; color: #000;">Key Features of Cybersecurity Training Course</h2>
+    <p>A Cybersecurity Training Course in Pune with these key features would typically offer the following:</p><br>
+    
+    <div class="key-features-list">
       <div class="key-features">
-        <div class="icon">📘</div>
-        <h3> Comprehensive Curriculum</h3>
-        <p>Master Python, Django, HTML, CSS, JavaScript, React, and more.</p>
+        <div class="icon">🔐</div>
+        <h3>Hands-on Hacking Labs</h3>
+        <p>Practice in real-world lab environments to understand threats and defenses.</p>
       </div>
+    
+      <div class="key-features">
+        <div class="icon">💻</div>
+        <h3>Live Threat Simulations</h3>
+        <p>Experience simulations of real cyberattacks and learn mitigation strategies.</p>
+      </div>
+    
+      <div class="key-features">
+        <div class="icon">🎯</div>
+        <h3>Placement Assistance</h3>
+        <p>Get career guidance and job placement support in cybersecurity roles.</p>
+      </div>
+    
+      <div class="key-features">
+        <div class="icon">🎓</div>
+        <h3>Certification upon Completion</h3>
+        <p>Receive industry-recognized certification validating your skills.</p>
+      </div>
+    
+      <div class="key-features">
+        <div class="icon">🌐</div>
+        <h3>Flexible Learning</h3>
+        <p>Study at your pace with online and offline options.</p>
+      </div>
+    
+      <div class="key-features">
+        <div class="icon">👨‍🏫</div>
+        <h3>Expert Instructors</h3>
+        <p>Learn from certified cybersecurity professionals with real-world experience.</p>
+      </div>
+    
+      <div class="key-features">
+        <div class="icon">📚</div>
+        <h3>Comprehensive Curriculum</h3>
+        <p>Covers network security, ethical hacking, malware analysis, and more.</p>
+      </div>
+    
+      <div class="key-features">
+        <div class="icon">📝</div>
+        <h3>Interview Preparation</h3>
+        <p>Resume building, mock interviews, and career mentorship.</p>
+      </div>
+    </div>
+    
 
-  <div class="key-features">
-    <div class="icon">💻</div>
-      <h3>Hands-on Training</h3>
-      <p>Work on real-world projects and build your portfolio.</p>
-  </div>
 
-  <div class="key-features">
-    <div class="icon">🏆</div>
-    <h3>Industry-Relevant Skills</h3>
-    <p>Learn database management, API integration, and cloud deployment.</p>
-  </div>
 
-  <div class="key-features">
-    <div class="icon">🎓</div>
-    <h3> Certification upon Completion</h3>
-    <p>Earn a recognized certificate to showcase your skills.</p>
-  </div>
-
-  <div class="key-features">
-    <div class="icon">🌐</div>
-    <h3>Flexible Learning</h3>
-    <p>Choose between online or offline classes at your convenience.</p>
-  </div>
-</div>
 </div>
 
 

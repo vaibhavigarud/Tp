@@ -14,80 +14,6 @@
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-  /* Popup Styles */
-.popup {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.7);
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  display: flex;
-}
-
-.popup-content {
-  background: linear-gradient(to right, #1f1c2c, #8da9ab);
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-  max-width: 500px;
-  width: 90%;
-  text-align: center;
-  color: white;
-  position: relative;
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-.close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 24px;
-  color: #080808;
-  cursor: pointer;
-}
-
-.popup-content h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.popup-content input,
-.popup-content textarea {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-}
-
-.popup-content button {
-  padding: 12px 30px;
-  background-color: #faf9f6;
-  color: black;
-  border: none;
-  border-radius: 25px;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.popup-content button:hover {
-  background-color: #f7f6f4;
-}
-
-</style>
-
 </head>
 
 <body>
@@ -124,13 +50,14 @@
           <div class="dropdown-column">
             <ul>
               <li><a href="java.html">Java Development</a></li>
-              <li><a href="python.html">Python Programming</a></li>
-              <li><a href="index.html?course=javaScript">JavaScript Mastery</a></li>
-              <li><a href="index.html?course=react">React Development</a></li>
-              <li><a href="index.html?course=cybersecurity">Cyber Security</a></li>
-              <li><a href="index.html?course=aws">AWS Cloud</a></li>
-              <li><a href="index.html?course=devops">DevOps Engineering</a></li>
-              <li><a href="index.html?course=uiux">UI/UX Design</a></li>
+                <li><a href="python.html">Python Programming</a></li>
+                <li><a href="blockchain.html">blockchain development</a></li>
+                <li><a href="react.html">React Development</a></li>
+                <li><a href="cybersecurity.html">Cyber Security</a></li>
+                <li><a href="aws.html">AWS Cloud</a></li>
+                <li><a href="devops.html">DevOps Engineering</a></li>
+                <li><a href="uiux.html">UI/UX Design</a></li>
+                <li><a href="android.html">Android Development</a></li>
             </ul>
           </div>
         </div>
@@ -141,7 +68,7 @@
       <li><a href="contact.html">Contact Us</a></li>
     </ul>
     <div class="enquire-btn">
-    <button class="enquire-now-btn">Enquire Now</button> 
+    <button class="enquire-now-btn" onclick="openEnquiryPopup">Enquire Now</button> 
   </div>
   </nav>
 
@@ -196,16 +123,16 @@
 
 <!-- Hero Section -->
 <section class="second-hero">
+  <div class="image">
   <div class="left">
     <div class="experience-box">
       <h2>15+<br><span>Years of Experiences</span></h2>
     </div>
-    <img src="group.jpg" alt="Group Image" class="group-img"/>
+    <img src="group.png" alt="Group Image" class="group-img"/>
+  
+    <img src="confidence.png" alt="Professional Lady" class="main-img"/>
   </div>
-
-  <div class="center">
-    <img src="confidence.jpg" alt="Professional Lady" class="main-img"/>
-  </div>
+</div>
 
 <div class="right">
   <p class="intro-text">Get To Know About Us</p>
@@ -322,10 +249,52 @@
 </div>
 </section>
   
+<section class="project-learning">
+<!-- Decorative Dotted Path -->
+  <div class="path-decoration">
+    <svg class="dotted-path" xmlns="http://www.w3.org/2000/svg" width="875" height="48" viewBox="0 0 875 48" fill="none">
+      <path
+        d="M2 29C20.2154 33.6916 38.9915 35.1342 57.6111 37.5555C80.2065 40.496 102.791 43.3231 125.556 44.5555C163.184 46.5927 201.26 45 238.944 45C312.75 45 385.368 30.7371 458.278 20.6666C495.231 15.5627 532.199 11.6429 569.278 6.11109C589.515 3.07551 609.767 2.09927 630.222 1.99908C655.606 1.87676 681.208 1.11809 706.556 2.4444C729.552 4.17096 772.539 6.75555 805.222 11.5C824.18 14.8064 850.34 24.2238 873 24"
+        stroke="#cedeee"
+        stroke-width="3"
+        stroke-linecap="round"
+        stroke-dasharray="1 12"
+      />
+    </svg>
+  </div>
+
+  <h2>Project Based <span class="highlight">Learning</span></h2>
+  
+  <div class="learning-steps">
+    <div class="step">
+      <img src="internship-img.jpg" alt="Internship">
+      <p>Internship of 6 months</p>
+    </div>
+    <div class="step">
+      <img src="task-management (1).jpg" alt="Live Project">
+      <p>Work on Live Project</p>
+    </div>
+    <div class="step">
+      <img src="manager-img.jpg" alt="Client Project">
+      <p>Work on Client's Project</p>
+    </div>
+    <div class="step">
+      <img src="certificate-img.jpg" alt="Stipend">
+      <p>Internship with Stipend</p>
+    </div>
+    <div class="step">
+      <img src="certificate (2)-img.jpg" alt="Certificate">
+      <p>Internship Certificate</p>
+    </div>
+  </div>
+</section>
+
+
 <!-- Swiper Logo Slider -->
 <!-- Company Logos Slider -->
-<div class="logo-swiper-container">
-  <div class="swiper logoSwiper">
+<div class="logo-swiper-container" style="margin-top: 25px;">
+  <div class="swiper logoSwiper" >
+     <h2>Our Students  <span> Placed </span>AT</h2>
     <div class="swiper-wrapper">
       <div class="swiper-slide"><img src="microsoft.png" alt="Logo 1" /></div>
       <div class="swiper-slide"><img src="linkd.png" alt="Logo 2" /></div>
@@ -340,9 +309,12 @@
       <div class="swiper-slide"><img src="brillio3.png" alt="Logo 11" /></div>
       <div class="swiper-slide"><img src="avaya1.png" alt="Logo 12" /></div>
       <div class="swiper-slide"><img src="deloitte.png" alt="Logo 13" /></div>
+
     </div>
   </div>
 </div>
+
+
 
 
 <!-- Footer -->
@@ -422,8 +394,8 @@
       
   // Open Enquiry Popup
 function openEnquiryPopup() {
-  const popup = document.getElementById("enquiry-popup");
-  popup.style.display = "flex";
+  const popup = document.getElementById("enquiry-popup").style.display = "flex";
+  document.body.style.overflow = "hidden"; // 🚫 Disable scroll
 }
 
 // Close Enquiry Popup with Fade-Out
@@ -434,6 +406,7 @@ function closeEnquiryPopup() {
   setTimeout(() => {
     popup.style.display = "none";
     popup.classList.remove("fade-out");
+    document.body.style.overflow = "auto"; // ✅ Enable scroll back
     document.getElementById("successMsg").textContent = "";
     document.getElementById("contactForm").reset();
   }, 400); // Wait for fade-out animation
@@ -541,6 +514,30 @@ counters.forEach(counter => {
   observer.observe(counter);
 });
 
+const toggleBtn = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+
+  toggleBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+  });
+
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    // 🔸 Dropdown icon logic
+    const icon = document.getElementById("dropdown-icon");
+    const dropdown = document.getElementById("courses-dropdown");
+
+    icon?.addEventListener("click", function (e) {
+      e.preventDefault();
+      dropdown?.classList.toggle("show");
+    });
+
+    document.addEventListener("click", function (event) {
+      if (!dropdown?.contains(event.target) && !icon?.contains(event.target)) {
+        dropdown?.classList.remove("show");
+      }
+    });
+  });
 
 </script>
 </body>
