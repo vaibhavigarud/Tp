@@ -30,7 +30,7 @@
   background-image: url('student-img.png');
   background-size: cover;
   background-position: center;
-  padding: 50px 20px;
+  padding: 170px 20px;
   color: #fff;
   text-shadow: 1px 1px 3px #1b1b1b;
   font-size: 20px;
@@ -397,15 +397,16 @@
         <div class="dropdown-content" id="courses-dropdown">
           <div class="dropdown-column">
             <ul>
-             <li><a href="java.html">Java Development</a></li>
-                <li><a href="python.html">Python Programming</a></li>
-                <li><a href="blockchain.html">blockchain development</a></li>
-                <li><a href="react.html">React Development</a></li>
-                <li><a href="cybersecurity.html">Cyber Security</a></li>
-                <li><a href="aws.html">AWS Cloud</a></li>
-                <li><a href="devops.html">DevOps Engineering</a></li>
-                <li><a href="uiux.html">UI/UX Design</a></li>
-                <li><a href="android.html">Android Development</a></li>
+              <li><a href="java.html">Java Development</a></li>
+              <li><a href="python.html">Python Programming</a></li>
+              <li><a href="blockchain.html">blockchain development</a></li>
+              <li><a href="react.html">React Development</a></li>
+              <li><a href="cybersecurity.html">Cyber Security</a></li>
+              <li><a href="aws.html">AWS Cloud</a></li>
+              <li><a href="devops.html">DevOps Engineering</a></li>
+              <li><a href="uiux.html">UI/UX Design</a></li>
+              <li><a href="android.html">Android Development</a></li>
+              <li><a href="powerbi.html">Power BI</a></li>
             </ul>
           </div>
         </div>
@@ -665,6 +666,16 @@ const toggleBtn = document.getElementById("menu-toggle");
   document.getElementById('infoPanel').addEventListener('click', function (e) {
     if (e.target === this) closeInfoPanel();
   });
+
+  // Hide dropdown when clicking outside
+  document.addEventListener("click", function (e) {
+    const dropdown = document.getElementById("courses-dropdown");
+    const toggle = document.getElementById("courses-toggle");
+    if (!dropdown.contains(e.target) && !toggle.contains(e.target)) {
+      dropdown.style.display = "none";
+    }
+  });
+
   </script>
 </body>
 </html>

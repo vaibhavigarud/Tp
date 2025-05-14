@@ -27,7 +27,7 @@ body {
   background-image: url('student-img.png');
   background-size: cover;
   background-position: center;
-  padding: 100px 20px;
+  padding: 190px 20px;
   color: #fff;
   text-shadow: 1px 1px 3px #000;
   font-size: 20px;
@@ -410,7 +410,7 @@ body {
         </ul>
   <!---enquiry btn--->
   <div class="enquire-btn">
-    <button class="enquire-now-btn">Enquire Now</button> 
+    <button class="enquire-now-btn" onclick="openEnquiryPopup()">Enquire Now</button> 
   </div>
   </nav>
   
@@ -419,7 +419,7 @@ body {
   <div class="popup-content">
     <span class="close" onclick="closeEnquiryPopup()">&times;</span>
     <h2>Enquiry Form</h2>
-    <form id="contactForm" action="https://formsubmit.co/contact@sangnakitsolutions.com" method="POST">
+    <form id="contactFormMain" action="https://formsubmit.co/contact@sangnakitsolutions.com" method="POST">
       <input type="hidden" name="_captcha" value="false">
 
       <input type="text" name="name" id="name" placeholder="Your Name" required>
@@ -469,7 +469,7 @@ body {
     <input type="tel" id="phone" placeholder="Phone Number" required>
     <textarea id="desc" placeholder="Description" rows="4" required></textarea>
     <button type="submit">Submit</button>
-    <p id="successMessage" style="color: green;" ></p>
+    <p id="successMsg" style="color: green;" ></p>
   </form>
 </div>    
     </div>
@@ -562,7 +562,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener("DOMContentLoaded", function () {
   // your code here
     const contactForm = document.getElementById("contactForm");
-    const successMsg = contactForm.querySelector("#successMessage");
+    const successMsg = contactForm.querySelector("#successMsg");
 
 contactForm.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -582,7 +582,8 @@ contactForm.addEventListener("submit", function (e) {
     return;
   }
 });
-
+   document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
   successMsg.textContent = "✅ Your message has been sent successfully!";
   contactForm.reset();
 
@@ -590,6 +591,8 @@ contactForm.addEventListener("submit", function (e) {
     successMsg.textContent = "";
   }, 5000);
 });
+  });
+
 
 
     // Open popup
@@ -601,11 +604,11 @@ contactForm.addEventListener("submit", function (e) {
   function closeEnquiryPopup() {
     document.getElementById("enquiry-popup").style.display = "none";
     document.getElementById("successMsg").textContent = "";
-    document.getElementById("contactForm").reset();
+    document.getElementById("contactFormMain").reset();
   }
 
   // Handle form submission with AJAX
-  document.getElementById("contactForm").addEventListener("submit", function (e) {
+  document.getElementById("contactFormMain").addEventListener("submit", function (e) {
     e.preventDefault();
 
     const form = e.target;
@@ -650,14 +653,15 @@ const toggleBtn = document.getElementById("menu-toggle");
     navLinks.classList.toggle("show");
   });
 
-  // Handle dropdown on mobile
-  document.querySelectorAll('.dropdown-toggle').forEach(drop => {
-    drop.addEventListener('click', (e) => {
-      e.preventDefault();
-      drop.parentElement.classList.toggle('open');
-    });
+  // Hide dropdown when clicking outside
+  document.addEventListener("click", function (e) {
+    const dropdown = document.getElementById("courses-dropdown");
+    const toggle = document.getElementById("courses-toggle");
+    if (!dropdown.contains(e.target) && !toggle.contains(e.target)) {
+      dropdown.style.display = "none";
+    }
   });
-
+ 
 
 </script>
 

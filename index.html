@@ -58,6 +58,8 @@
                 <li><a href="devops.html">DevOps Engineering</a></li>
                 <li><a href="uiux.html">UI/UX Design</a></li>
                 <li><a href="android.html">Android Development</a></li>
+                <li><a href="powerbi.html">Power BI</a></li>
+                
             </ul>
           </div>
         </div>
@@ -68,7 +70,7 @@
       <li><a href="contact.html">Contact Us</a></li>
     </ul>
     <div class="enquire-btn">
-    <button class="enquire-now-btn" onclick="openEnquiryPopup">Enquire Now</button> 
+    <button class="enquire-now-btn" onclick="openEnquiryPopup()">Enquire Now</button> 
   </div>
   </nav>
 
@@ -210,9 +212,9 @@
         <p>Master Python with real-world projects.</p>
       </div>
       <div class="course-card">
-        <div class="courses-img" style="background-image: url(javaScript.png);"></div>
-        <h3>JavaScript Mastery</h3>
-        <p>Become a JavaScript expert with hands-on projects.</p>
+        <div class="courses-img" style="background-image: url(blockchain.png);"></div>
+        <h3>blockchain Devveloper</h3>
+        <p>Learn blockchain technology and smart contracts.</p>
     </div>
       <div class="course-card">
         <div class="courses-img" style="background-image: url(react.png);"></div>
@@ -395,7 +397,6 @@
   // Open Enquiry Popup
 function openEnquiryPopup() {
   const popup = document.getElementById("enquiry-popup").style.display = "flex";
-  document.body.style.overflow = "hidden"; // 🚫 Disable scroll
 }
 
 // Close Enquiry Popup with Fade-Out
@@ -406,7 +407,6 @@ function closeEnquiryPopup() {
   setTimeout(() => {
     popup.style.display = "none";
     popup.classList.remove("fade-out");
-    document.body.style.overflow = "auto"; // ✅ Enable scroll back
     document.getElementById("successMsg").textContent = "";
     document.getElementById("contactForm").reset();
   }, 400); // Wait for fade-out animation
@@ -538,6 +538,16 @@ const toggleBtn = document.getElementById("menu-toggle");
       }
     });
   });
+
+  // Hide dropdown when clicking outside
+  document.addEventListener("click", function (e) {
+    const dropdown = document.getElementById("courses-dropdown");
+    const toggle = document.getElementById("courses-toggle");
+    if (!dropdown.contains(e.target) && !toggle.contains(e.target)) {
+      dropdown.style.display = "none";
+    }
+  });
+
 
 </script>
 </body>
