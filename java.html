@@ -510,11 +510,32 @@ body, html {
         <li><a href="about.html">About Us</a></li>
         <li><a href="contact.html">Contact Us</a></li>
       </ul>
-      <div class="enquire-btn">
-      <button class="enquire-now-btn">Enquire Now</button> 
-    </div>
-     </nav>
-  
+      <!---enquiry btn--->
+ <div class="enquire-btn">
+  <button class="enquire-now-btn"  onclick="openEnquiryPopup()">Enquire Now</button> 
+</div>
+</nav>
+
+<!-- Pop-up Enquiry Form--> 
+<div id="enquiry-popup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closeEnquiryPopup()">&times;</span>
+    <h2>Enquiry Form</h2>
+    <form id="contactForm" action="https://formsubmit.co/contact@sangnakitsolutions.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+
+      <input type="text" name="name" id="name" placeholder="Your Name" required>
+      <input type="email" name="email" id="email" placeholder="Your Email" required>
+      <input type="text" name="subject" id="subject" placeholder="Subject" required>
+      <textarea name="message" id="desc" rows="6" placeholder="Your Message" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+    <p id="successMsg" style="margin-top: 10px; color: #8ff58a; font-weight: bold;"></p>
+  </div>
+</div>
+
+
      <!-- Hero Section -->
 <section class="about-hero">
     <div class="container" style="text-align: left;">
@@ -813,6 +834,59 @@ body, html {
   document.getElementById("menu-toggle").addEventListener("click", () => {
     document.getElementById("nav-links").classList.toggle("show");
   });
+
+ // Open Enquiry Popup
+function openEnquiryPopup() {
+  const popup = document.getElementById("enquiry-popup");
+  popup.style.display = "flex";
+  
+}
+
+// Close Enquiry Popup with Fade-Out
+function closeEnquiryPopup() {
+  const popup = document.getElementById("enquiry-popup");
+  popup.classList.add("fade-out");
+
+  setTimeout(() => {
+    popup.style.display = "none";
+    popup.classList.remove("fade-out");
+    document.body.style.overflow = "auto"; // ✅ Enable scroll back
+    document.getElementById("successMsg").textContent = "";
+    document.getElementById("contactForm").reset();
+  }, 400); // Wait for fade-out animation
+}
+
+// Handle form submission with AJAX
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const formData = new FormData(form);
+
+  fetch(form.action, {
+    method: "POST",
+    body: formData,
+    headers: { Accept: "application/json" }
+  })
+    .then(response => {
+      if (response.ok) {
+        document.getElementById("successMsg").textContent = "✅ Your message has been sent successfully!";
+        form.reset();
+
+        // Auto-close after 2.5 seconds
+        setTimeout(() => {
+          closeEnquiryPopup();
+        }, 2500);
+      } else {
+        document.getElementById("successMsg").textContent = "❌ Something went wrong. Please try again.";
+      }
+    })
+    .catch(() => {
+      document.getElementById("successMsg").textContent = "⚠️ Network error. Please try later.";
+    });
+});
+
+
 </script>
 
 </body>
